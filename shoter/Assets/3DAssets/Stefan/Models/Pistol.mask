@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pistol
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature.002
+    m_Weight: 1
+  - m_Path: Armature.002/Bone
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.002
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.002/Bone.003
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.002/Bone.003/Bone.003_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.004 L
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.004 L/Bone.005 L
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.004 L/Bone.005 L/Bone.006 L
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.004 L/Bone.005 L/Bone.006 L/Bone.007
+      L
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.004 L/Bone.005 L/Bone.006 L/Bone.007
+      L/Bone.007 L_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.004 R
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.004 R/Bone.005 R
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.004 R/Bone.005 R/Bone.006 R
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.004 R/Bone.005 R/Bone.006 R/Bone.007
+      R
+    m_Weight: 1
+  - m_Path: Armature.002/Bone/Bone.001/Bone.004 R/Bone.005 R/Bone.006 R/Bone.007
+      R/Bone.007 R_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 L.001
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 L.001/Bone.005 L.001
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 L.001/Bone.005 L.001/Bone.006 L.001
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 L.001/Bone.005 L.001/Bone.006 L.001/Bone.006 L.002
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 L.001/Bone.005 L.001/Bone.006 L.001/Bone.006 L.002/Bone.006
+      L.003
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 L.001/Bone.005 L.001/Bone.006 L.001/Bone.006 L.002/Bone.006
+      L.003/Bone.006 L.003_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 R.001
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 R.001/Bone.005 R.001
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 R.001/Bone.005 R.001/Bone.006 R.001
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 R.001/Bone.005 R.001/Bone.006 R.001/Bone.006 R.002
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 R.001/Bone.005 R.001/Bone.006 R.001/Bone.006 R.002/Bone.006
+      R.003
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.004 R.001/Bone.005 R.001/Bone.006 R.001/Bone.006 R.002/Bone.006
+      R.003/Bone.006 R.003_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.005 R.002 IK L
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.005 R.002 IK L/Bone.005 R.002 IK L_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.005 R.002 IK R
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.005 R.002 IK R/Bone.005 R.002 IK R_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.005 R.002 IK.001 L
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.005 R.002 IK.001 L/Bone.005 R.002 IK.001 L_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.005 R.002 IK.001 R
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.005 R.002 IK.001 R/Bone.005 R.002 IK.001 R_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.006 R.004 IK L
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.006 R.004 IK L/Bone.006 R.004 IK L_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.006 R.004 IK R
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.006 R.004 IK R/Bone.006 R.004 IK R_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.006 R.004 IK R.001 L
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.006 R.004 IK R.001 L/Bone.006 R.004 IK R.001 L_end
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.006 R.004 IK R.001 R
+    m_Weight: 1
+  - m_Path: Armature.002/Bone.006 R.004 IK R.001 R/Bone.006 R.004 IK R.001 R_end
+    m_Weight: 1
+  - m_Path: Cube.004
+    m_Weight: 1
