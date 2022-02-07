@@ -1,28 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using TMPro;
+using Photon.Realtime;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MonoBehaviourPunCallbacks
 {
-    public static MainMenu Instance;
-    public MenuItem[] menuItems;
+    public TMP_InputField CreateGameInput;
 
-    private void Awake()
+
+    void Start()
     {
-        Instance = this;
+        PhotonNetwork.ConnectUsingSettings();
     }
-    public void SwitchMenu(string _name)
+    public override void OnConnectedToMaster()
     {
-        foreach (MenuItem mi in menuItems)
-        {
-            if (mi.menuItem == _name)
-                mi.gameObject.SetActive(true);
-            else
-                mi.gameObject.SetActive(false);
-        }
+        PhotonNetwork.JoinLobby();
     }
-    public void Quit()
+    public void CreateRoom()
     {
-        Application.Quit();
+        PhotonNetwork.CreateRoom(Random.Range(1, 9999).ToString("0000"));
+    }
+    public void JoinRandomLobby()
+    {
+        PhotonNetwork.JoinRandomRoom();
     }
 }
