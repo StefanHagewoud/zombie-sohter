@@ -10,7 +10,6 @@ public class AIBasics : MonoBehaviour
 
 
     //Targeting
-    public float targetRange;
     public GameObject[] players;
     [HideInInspector]public Transform targetDestination;
     void Start()
@@ -22,16 +21,18 @@ public class AIBasics : MonoBehaviour
         UpdateTarget();
     }
 
+    private void Update()
+    {
+        if(nav.remainingDistance <= nav.stoppingDistance)
+        {
+            
+        }
+    }
+
     public void UpdateTarget()
     {
         GetClosestPlayer();
         nav.destination = targetDestination.transform.position;
-
-        if (Vector3.Distance(gameObject.transform.position, targetDestination.transform.position) < targetRange)
-        {
-            nav.speed = 0;
-            gameObject.transform.LookAt(targetDestination);
-        }
     }
 
     public void GetClosestPlayer()
@@ -57,4 +58,5 @@ public class AIBasics : MonoBehaviour
         }
         targetDestination = currentClosest.transform;
     }
+
 }
