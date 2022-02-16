@@ -5,6 +5,10 @@ using UnityEngine;
 public class MediumRobot : AIBasics
 {
 
+    private void Update()
+    {
+        
+    }
     public void FireMainWeapon()
     {
 
