@@ -9,28 +9,33 @@ public class BigRobot : AIBasics
     public GameObject rightRocketSpawn;
     public GameObject leftRocketSpawn;
 
+    bool shooting;
     public override void Update()
     {
         base.Update();
 
         if (nav.remainingDistance <= nav.stoppingDistance)
         {
-            anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 0);
+            shooting = true;
             FireMainWeapon();
         }
         else
         {
-            anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 1);
+            
         }
     }
 
     public void FireMainWeapon()
     {
+        StartCoroutine(Shooting());
         IEnumerator Shooting()
         {
+            anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 0);
             anim.SetLayerWeight(anim.GetLayerIndex("Shooting"), 1);
             yield return new WaitForSecondsRealtime(2);
             anim.SetLayerWeight(anim.GetLayerIndex("Shooting"), 0);
+            anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 1);
+            shooting = false;
         }
     }
     public void InstantiateRocketRight()

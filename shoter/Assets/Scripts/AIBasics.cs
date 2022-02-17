@@ -21,7 +21,6 @@ public class AIBasics : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         moveSpeed = nav.speed;
-        //GetClosestPlayer();
         InvokeRepeating("UpdateTarget", 0, 10);
     }
 
