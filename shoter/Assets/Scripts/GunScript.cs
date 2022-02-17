@@ -63,9 +63,10 @@ public class GunScript : MonoBehaviour
         //Spread
         float x = Random.Range(-spread, spread);
         float y = Random.Range(-spread, spread);
+        float z = Random.Range(-spread, spread);
 
         //calculate Direction with Spread
-        Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
+        Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, z);
 
         //Raycast
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range))

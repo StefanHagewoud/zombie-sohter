@@ -64,10 +64,6 @@ public class GunSwitching : MonoBehaviour
             SelectWeapon();
         }
 
-    }
-
-    void SelectWeapon()
-    {
         int i = 0;
         foreach (Transform weapon in transform)
         {
@@ -81,5 +77,11 @@ public class GunSwitching : MonoBehaviour
             }
             i++;
         }
+
+    }
+
+    void SelectWeapon()
+    {
+   
     }
 }
