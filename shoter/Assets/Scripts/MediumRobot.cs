@@ -5,9 +5,9 @@ using UnityEngine;
 public class MediumRobot : AIBasics
 {
 
-    private void Update()
+    public override void Update()
     {
-        
+        base.Update();
     }
     public void FireMainWeapon()
     {

@@ -7,7 +7,6 @@ public class AIManager : MonoBehaviour
     public static AIManager instance;
 
     public GameObject[] robotPrefabs;
-    public GameObject currentRobotPrefab;
     public GameObject[] robots;
     public GameObject[] players;
 
@@ -27,7 +26,8 @@ public class AIManager : MonoBehaviour
     public void SpawnRobot()
     {
         Transform spawnPos = spawnPositions[Random.Range(0, spawnPositions.Length)];
-        Instantiate(currentRobotPrefab = robotPrefabs[Random.Range(0, robotPrefabs.Length)], spawnPos.position, Quaternion.identity);
+        GameObject currentRobotPrefab = robotPrefabs[Random.Range(0, robotPrefabs.Length)];
+        Instantiate(currentRobotPrefab, spawnPos.position, Quaternion.identity);
     }
 
     public void UpdatePlayers()

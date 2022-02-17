@@ -5,10 +5,11 @@ using UnityEngine.AI;
 
 public class AIBasics : MonoBehaviour
 {
-    public NavMeshAgent nav;
+    [HideInInspector]public NavMeshAgent nav;
+    [HideInInspector] public Animator anim;
     AIManager _AIManager;
 
-    public Animator anim;
+    
     float moveSpeed;
     //Targeting
     public GameObject[] players;
@@ -21,13 +22,16 @@ public class AIBasics : MonoBehaviour
         anim = GetComponent<Animator>();
         moveSpeed = nav.speed;
         //GetClosestPlayer();
-        UpdateTarget();
+        InvokeRepeating("UpdateTarget", 0, 10);
     }
-
 
     public void UpdateTarget()
     {
         GetClosestPlayer();
+    }
+
+    public virtual void Update()
+    {
         nav.destination = targetDestination.transform.position;
     }
 
@@ -54,5 +58,4 @@ public class AIBasics : MonoBehaviour
         }
         targetDestination = currentClosest.transform;
     }
-
 }
