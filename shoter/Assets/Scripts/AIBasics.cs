@@ -7,6 +7,7 @@ public class AIBasics : MonoBehaviour
 {
     [HideInInspector]public NavMeshAgent nav;
     [HideInInspector] public Animator anim;
+    [HideInInspector] public Rigidbody rb;
     AIManager _AIManager;
 
     
@@ -20,6 +21,7 @@ public class AIBasics : MonoBehaviour
         players = _AIManager.players;
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
         moveSpeed = nav.speed;
         InvokeRepeating("UpdateTarget", 0, 10);
     }

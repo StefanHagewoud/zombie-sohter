@@ -15,15 +15,25 @@ public class BigRobot : AIBasics
     {
         base.Update();
 
-        if (nav.remainingDistance <= nav.stoppingDistance && !reloading)
-        {
-            nav.speed = 0;
-            FireMainWeapon();
-        }
+
         if (!reloading)
         {
             nav.speed = moveSpeed;
+            if (nav.remainingDistance <= nav.stoppingDistance)
+            {
+                nav.speed = 0;
+                FireMainWeapon();
+            }
         }
+
+        //if(rb.velocity <= )
+        //{
+        //    anim.SetFloat("Blend", 1f, 0.1f, Time.deltaTime);
+        //}
+        //else
+        //{
+        //    anim.SetFloat("Blend", 0f, 0.1f, Time.deltaTime);
+        //}
     }
 
     public void FireMainWeapon()
@@ -31,11 +41,9 @@ public class BigRobot : AIBasics
         StartCoroutine(Shooting());
         IEnumerator Shooting()
         {
-            anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 0);
             anim.SetLayerWeight(anim.GetLayerIndex("Shooting"), 1);
             yield return new WaitForSecondsRealtime(0.58f);
             anim.SetLayerWeight(anim.GetLayerIndex("Shooting"), 0);
-            anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 1);
             nav.speed = moveSpeed;
             StartCoroutine(Reloading());
         }

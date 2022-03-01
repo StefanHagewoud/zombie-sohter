@@ -23,6 +23,11 @@ public class AIManager : MonoBehaviour
         SpawnRobot();
     }
 
+
+    public void CurrentWave()
+    {
+
+    }
     public void SpawnRobot()
     {
         Transform spawnPos = spawnPositions[Random.Range(0, spawnPositions.Length)];
