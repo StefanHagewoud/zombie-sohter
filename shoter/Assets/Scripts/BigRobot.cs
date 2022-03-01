@@ -9,19 +9,20 @@ public class BigRobot : AIBasics
     public GameObject rightRocketSpawn;
     public GameObject leftRocketSpawn;
 
-    bool shooting;
+    public float rocketReloadTime;
+    bool reloading;
     public override void Update()
     {
         base.Update();
 
-        if (nav.remainingDistance <= nav.stoppingDistance)
+        if (nav.remainingDistance <= nav.stoppingDistance && !reloading)
         {
-            shooting = true;
+            nav.speed = 0;
             FireMainWeapon();
         }
-        else
+        if (!reloading)
         {
-            
+            nav.speed = moveSpeed;
         }
     }
 
@@ -32,18 +33,25 @@ public class BigRobot : AIBasics
         {
             anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 0);
             anim.SetLayerWeight(anim.GetLayerIndex("Shooting"), 1);
-            yield return new WaitForSecondsRealtime(2);
+            yield return new WaitForSecondsRealtime(0.58f);
             anim.SetLayerWeight(anim.GetLayerIndex("Shooting"), 0);
             anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 1);
-            shooting = false;
+            nav.speed = moveSpeed;
+            StartCoroutine(Reloading());
+        }
+        IEnumerator Reloading()
+        {
+            reloading = true;
+            yield return new WaitForSecondsRealtime(rocketReloadTime);
+            reloading = false;
         }
     }
     public void InstantiateRocketRight()
     {
-        Instantiate(GuidedRocket, rightRocketSpawn.transform.position, Quaternion.identity);
+        Instantiate(GuidedRocket, rightRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
     }
     public void InstantiateRocketLeft()
     {
-        Instantiate(GuidedRocket, leftRocketSpawn.transform.position, Quaternion.identity);
+        Instantiate(GuidedRocket, leftRocketSpawn.transform.position, leftRocketSpawn.transform.rotation);
     }
 }

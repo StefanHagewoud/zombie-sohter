@@ -10,7 +10,7 @@ public class AIBasics : MonoBehaviour
     AIManager _AIManager;
 
     
-    float moveSpeed;
+    [HideInInspector]public float moveSpeed;
     //Targeting
     public GameObject[] players;
     [HideInInspector]public Transform targetDestination;

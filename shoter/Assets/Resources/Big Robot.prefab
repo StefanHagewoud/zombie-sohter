@@ -741,11 +741,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   anim: {fileID: 0}
+  moveSpeed: 0
   players: []
   targetDestination: {fileID: 0}
-  GuidedRocket: {fileID: 0}
-  rightRocketSpawn: {fileID: 0}
-  leftRocketSpawn: {fileID: 0}
+  GuidedRocket: {fileID: 6270158503819681132, guid: 6334ac70ec4fb3441a704a58b704b403, type: 3}
+  rightRocketSpawn: {fileID: 6190345708002446712}
+  leftRocketSpawn: {fileID: 4849679233247201797}
+  rocketReloadTime: 10
 --- !u!195 &2387335360166891637
 NavMeshAgent:
   m_ObjectHideFlags: 0
