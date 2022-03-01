@@ -29588,7 +29588,7 @@ Transform:
   - {fileID: 1399258272233351919}
   - {fileID: 5963315139360184932}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1536941484
 GameObject:
@@ -40174,7 +40174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2123121561138244108, guid: da9b03d4a2413cd4c993a14fe8153761, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2123121561138244108, guid: da9b03d4a2413cd4c993a14fe8153761, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40450,7 +40450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 71175560261641341, guid: 6cd1eafa9bb4f9f488c506933a6a1385, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.082
       objectReference: {fileID: 0}
     - target: {fileID: 71175560261641341, guid: 6cd1eafa9bb4f9f488c506933a6a1385, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40487,6 +40487,19 @@ PrefabInstance:
     - target: {fileID: 844158191601581767, guid: 6cd1eafa9bb4f9f488c506933a6a1385, type: 3}
       propertyPath: m_Name
       value: Medium Robot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367333696822951615, guid: 6cd1eafa9bb4f9f488c506933a6a1385, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'Hip R'\n\tTransform 'Bone'\n\tTransform
+        'Hip L'\n\tTransform 'Leg 3 L.001'\n\tTransform 'Leg 1 L'\n\tTransform 'Arm
+        1 R'\n\tTransform 'Leg 3 R'\n\tTransform 'Leg 1 R'\n\tTransform 'Leg 3 L'\n\tTransform
+        'Leg 3 R.001'\n\tand more ...\n\tFrom animation clip 'Armature|Idle'"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367333696822951615, guid: 6cd1eafa9bb4f9f488c506933a6a1385, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cd1eafa9bb4f9f488c506933a6a1385, type: 3}
