@@ -4,94 +4,53 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    public GunScript gunScript;
-    public Rigidbody rb;
-    public BoxCollider coll;
-    public Transform player, gunContainer, fpscam;
+    public Transform player, gunContainer;
 
-    public float pickUpRange;
+    public Camera fpsCam;
+    public RaycastHit hit;
+    public float range;
+
     public float dropForwardForce, dropUpwardForce;
-    public static int gunCounter;
 
     public bool equipped;
-    public static bool slotfull;
-
-    public Vector3 pickUpOffset;
-
-    private void Start()
-    {
-        if (!equipped)
-        {
-            gunScript.enabled = false;
-            rb.isKinematic = false;
-            coll.isTrigger = false;
-        }
-        if (equipped)
-        {
-            gunScript.enabled = true;
-            rb.isKinematic = true;
-            coll.isTrigger = true;
-            slotfull = true;
-        }
-    }
 
     private void Update()
     {
         //check if player is in range and E is pressed
-        Vector3 distanceToPlayer = player.position - transform.position;
-        if (!equipped && distanceToPlayer.magnitude <= pickUpRange && Input.GetKeyDown(KeyCode.E))
+        //Vector3 distanceToPlayer = player.position - transform.position;
+        if (!equipped && gunContainer.childCount < 2 && Input.GetKeyDown(KeyCode.E))
         {
-            if(gunContainer.childCount < 2)
+            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
             {
-                Pickup();
+                Debug.Log(hit.transform.name);
+                if (hit.transform.CompareTag("PickUpAble"))
+                {
+                    PickUpItem();
+                }
             }
         }
-        //drop if pressed Q
-        if (equipped && Input.GetKeyDown(KeyCode.Q))
-        {
-            Drop();
-        }    
     }
 
-    private void Pickup()
+    private void PickUpItem()
     {
-        equipped = true;
-        slotfull = true;
-        
-    
+        //equipped = true;
+        hit.transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        hit.transform.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        hit.transform.gameObject.GetComponent<GunScript>().enabled = true;
+
         //make weapon a child of the camera and move it to default position
-        transform.SetParent(gunContainer);
+        hit.transform.SetParent(gunContainer);
         //transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        hit.transform.localRotation = Quaternion.Euler(Vector3.zero);
         //transform.localScale = Vector3.one;
-        gunContainer.GetComponent<GunSwitching>().selectedWeapon = gunContainer.childCount -1;
+        gunContainer.GetComponent<GunSwitching>().selectedWeapon = gunContainer.childCount - 1;
 
         //make rigidbody kinematic and boxcollider a trigger
-        rb.isKinematic = true;
-        coll.isTrigger = true;
+        //rb.isKinematic = true;
+        //coll.isTrigger = true;
 
         //enable script
-        gunScript.enabled = true;
+        //gunScript.enabled = true;
     }
 
-    private void Drop()
-    {
-        equipped = false;
-        slotfull = false;
-
-        rb.isKinematic = false;
-        coll.isTrigger = false;
-
-        transform.SetParent(null);
-        //disable gunscript
-        gunScript.enabled = false;
-
-        rb.velocity = player.GetComponent<Rigidbody>().velocity;
-
-        rb.AddForce(fpscam.forward * dropForwardForce, ForceMode.Impulse);
-        rb.AddForce(fpscam.up * dropUpwardForce, ForceMode.Impulse);
-
-        float random = Random.Range(-1f, 1f);
-        rb.AddTorque(new Vector3(random, random, random) * 10);
-    }
 }

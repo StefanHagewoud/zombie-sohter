@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunSwitching : MonoBehaviour
 {
     public int selectedWeapon = 0;
+    public Transform gunContainer;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +71,11 @@ public class GunSwitching : MonoBehaviour
             if (i == selectedWeapon)
             {
                 weapon.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    Drop();
+                    weapon.SetParent(null);
+                }
             }
             else
             {
@@ -78,6 +84,33 @@ public class GunSwitching : MonoBehaviour
             i++;
         }
 
+    }
+
+    public void Drop()
+    {
+        //equipped = false;
+        gunContainer.GetComponentInChildren<GunScript>().enabled = false;
+        gunContainer.GetComponentInChildren<Rigidbody>().isKinematic = false;
+        gunContainer.GetComponentInChildren<BoxCollider>().isTrigger = false;
+
+       
+
+
+        //transform.SetParent(null);
+        //rb.isKinematic = false;
+        //coll.isTrigger = false;
+
+        // transform.SetParent(null);
+        //disable gunscript
+        // gunScript.enabled = false;
+
+        // rb.velocity = player.GetComponent<Rigidbody>().velocity;
+
+        //rb.AddForce(fpscam.forward * dropForwardForce, ForceMode.Impulse);
+        //rb.AddForce(fpscam.up * dropUpwardForce, ForceMode.Impulse);
+
+        //float random = Random.Range(-1f, 1f);
+        //rb.AddTorque(new Vector3(random, random, random) * 10);
     }
 
     void SelectWeapon()

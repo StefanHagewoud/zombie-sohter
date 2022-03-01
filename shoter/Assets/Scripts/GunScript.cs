@@ -80,7 +80,7 @@ public class GunScript : MonoBehaviour
         }
 
         //Graphics
-        Instantiate(bulletindicatorfornow, rayHit.point, Quaternion.Euler(0, 180, 0));
+        Destroy(Instantiate(bulletindicatorfornow, rayHit.point, Quaternion.Euler(0, 180, 0)), 2);
 
         bulletsleft--;
         bulletsShot--;

@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float mouseSensitivity = 200f;
     float xRotation = 0f;
     Transform cam;
+    public Transform torso;
 
     void Start()
     {
@@ -46,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
         cam.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
+
+        torso.localRotation = cam.localRotation;
     }
 
     void FixedUpdate()
