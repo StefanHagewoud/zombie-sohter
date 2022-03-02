@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
     private void Awake()
     {
         Instance = this;
+        SwitchMenu("Main");
     }
     public void SwitchMenu(string _name)
     {
