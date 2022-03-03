@@ -63,6 +63,9 @@ ModelImporter:
   - first:
       74: 3840206127505883752
     second: Armature.002|Weapon Idle
+  - first:
+      74: -1878768045859231221
+    second: Armature.002|T POSE (1)
   externalObjects: {}
   materials:
     materialImportMode: 2

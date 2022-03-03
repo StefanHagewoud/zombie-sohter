@@ -1,0 +1,678 @@
+fileFormatVersion: 2
+guid: 73c0b571d632ae7418be5d7676241371
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 182234659640451378
+    second: Armature.002|Armature.002|Armature.002|Cube.001Action|Armature.002|Cube.
+  - first:
+      74: 3647099138845573900
+    second: Armature.002|Armature.002|Armature.002|Cube.001Action|Armature.002|Cube.001A
+  - first:
+      74: -80646792248309852
+    second: Armature.002|Armature.002|Armature.002|Cube.004Action|Armature.002|Cube.
+  - first:
+      74: 7267895237858579083
+    second: Armature.002|Armature.002|Armature.002|Cube.004Action|Armature.002|Cube.004A
+  - first:
+      74: 4308222166908805463
+    second: Armature.002|Armature.002|Armature.002|Cube.005Action|Armature.002|Cube.
+  - first:
+      74: -6087015142028145716
+    second: Armature.002|Armature.002|Armature.002|Cube.005Action|Armature.002|Cube.005A
+  - first:
+      74: -2733347860642448813
+    second: Armature.002|Armature.002|Armature.002|CubeAction|Armature.002|CubeActio
+  - first:
+      74: -6423470715736874886
+    second: Armature.002|Armature.002|Armature.002|CubeAction|Armature.002|CubeAction
+  - first:
+      74: -3959905775810825841
+    second: Armature.002|Armature.002|Armature.002|Idle Weapon|Armature.002|Idle
+      Wea
+  - first:
+      74: 7069367283965909969
+    second: Armature.002|Armature.002|Armature.002|Idle Weapon|Armature.002|Idle
+      Weapon
+  - first:
+      74: -9174434474941987679
+    second: Armature.002|Armature.002|Armature.002|Idle|Armature.002|Idle
+  - first:
+      74: -4231546445028269232
+    second: Armature.002|Armature.002|Armature.002|Idle|Armature.002|Idle.001
+  - first:
+      74: 4167675274214377133
+    second: Armature.002|Armature.002|Armature.002|M4 Reload|Armature.002|M4 Reload
+  - first:
+      74: -3953658854244728428
+    second: Armature.002|Armature.002|Armature.002|M4 Reload|Armature.002|M4 Reload.001
+  - first:
+      74: -3083726276916153094
+    second: Armature.002|Armature.002|Armature.002|M4 Shoot|Armature.002|M4 Shoot
+  - first:
+      74: 5058381746989981870
+    second: Armature.002|Armature.002|Armature.002|M4 Shoot|Armature.002|M4 Shoot.001
+  - first:
+      74: 4321998437100026460
+    second: Armature.002|Armature.002|Armature.002|Pistol Animation Idle|Armature.00
+  - first:
+      74: 4639514273890685940
+    second: Armature.002|Armature.002|Armature.002|Pistol Animation Idle|Armature.002|Pi
+  - first:
+      74: 4120672045859073984
+    second: Armature.002|Armature.002|Armature.002|Pistol Animation Reload|Armature.
+  - first:
+      74: 1974920222337755948
+    second: Armature.002|Armature.002|Armature.002|Pistol Animation Reload|Armature.002|
+  - first:
+      74: 3512740497540298539
+    second: Armature.002|Armature.002|Armature.002|Pistol Animation Shoot|Armature.0
+  - first:
+      74: -1910051550514272465
+    second: Armature.002|Armature.002|Armature.002|Pistol Animation Shoot|Armature.002|P
+  - first:
+      74: -8708492856479648927
+    second: Armature.002|Armature.002|Armature.002|Reload|Armature.002|Reload
+  - first:
+      74: 436209647784072048
+    second: Armature.002|Armature.002|Armature.002|Reload|Armature.002|Reload.001
+  - first:
+      74: -4971044673264011277
+    second: Armature.002|Armature.002|Armature.002|Running Animation|Armature.002|Ru
+  - first:
+      74: 5572201746400735649
+    second: Armature.002|Armature.002|Armature.002|Running Animation|Armature.002|Runnin
+  - first:
+      74: -5494810380260853109
+    second: Armature.002|Armature.002|Armature.002|Shoot Animation|Armature.002|Shoo
+  - first:
+      74: 1593698240916356458
+    second: Armature.002|Armature.002|Armature.002|Shoot Animation|Armature.002|Shoot
+      An
+  - first:
+      74: -5833128575307932745
+    second: Armature.002|Armature.002|Armature.002|Shotgun Reload|Armature.002|Shotg
+  - first:
+      74: 7919892888359263191
+    second: Armature.002|Armature.002|Armature.002|Shotgun Reload|Armature.002|Shotgun
+      R
+  - first:
+      74: -6855219653744098972
+    second: Armature.002|Armature.002|Armature.002|Shotgun shoot|Armature.002|Shotgu
+  - first:
+      74: 109932431021127674
+    second: Armature.002|Armature.002|Armature.002|Shotgun shoot|Armature.002|Shotgun
+      sh
+  - first:
+      74: -2009050141648047905
+    second: Armature.002|Armature.002|Armature.002|T POSE.001|Armature.002|T POSE.001
+  - first:
+      74: -299267673069150311
+    second: Armature.002|Armature.002|Armature.002|T POSE.001|Armature.002|T POSE.002
+  - first:
+      74: -7258955226267586559
+    second: Armature.002|Armature.002|Armature.002|T POSE|Armature.002|T POSE
+  - first:
+      74: -4938521439196055181
+    second: Armature.002|Armature.002|Armature.002|T POSE|Armature.002|T POSE.001
+  - first:
+      74: -7030985465707163915
+    second: Armature.002|Armature.002|Armature.002|Walking|Armature.002|Walking
+  - first:
+      74: 6605460103364720389
+    second: Armature.002|Armature.002|Armature.002|Walking|Armature.002|Walking.001
+  - first:
+      74: -760892214490157251
+    second: Armature.002|Armature.002|Armature.002|Weapon Idle|Armature.002|Weapon
+      I
+  - first:
+      74: -3929302853574502203
+    second: Armature.002|Armature.002|Armature.002|Weapon Idle|Armature.002|Weapon
+      Idle
+  - first:
+      74: 7061760000467241275
+    second: Armature.002|DOWN
+  - first:
+      74: -1736130791818896240
+    second: Armature.002|UP.001
+  - first:
+      74: -5352024172454379738
+    second: Armature.002|Armature.002|Armature.002|M4 Shoot|Armature.002|M4 Shoot
+      (1)
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|Idle Weapon|Armature.002|Idle
+        Weapon
+      takeName: Armature.002|Armature.002|Armature.002|Idle Weapon|Armature.002|Idle
+        Weapon
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 251
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|M4 Reload|Armature.002|M4 Reload
+      takeName: Armature.002|Armature.002|Armature.002|M4 Reload|Armature.002|M4
+        Reload
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|M4 Shoot|Armature.002|M4 Shoot
+      takeName: Armature.002|Armature.002|Armature.002|M4 Shoot|Armature.002|M4 Shoot
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|Pistol Animation Idle|Armature.00
+      takeName: Armature.002|Armature.002|Armature.002|Pistol Animation Idle|Armature.00
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 251
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|Pistol Animation Reload|Armature.
+      takeName: Armature.002|Armature.002|Armature.002|Pistol Animation Reload|Armature.
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 144
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|Pistol Animation Shoot|Armature.0
+      takeName: Armature.002|Armature.002|Armature.002|Pistol Animation Shoot|Armature.0
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|Reload|Armature.002|Reload
+      takeName: Armature.002|Armature.002|Armature.002|Reload|Armature.002|Reload
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|Running Animation|Armature.002|Ru
+      takeName: Armature.002|Armature.002|Armature.002|Running Animation|Armature.002|Ru
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|Shoot Animation|Armature.002|Shoo
+      takeName: Armature.002|Armature.002|Armature.002|Shoot Animation|Armature.002|Shoo
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|Shotgun Reload|Armature.002|Shotg
+      takeName: Armature.002|Armature.002|Armature.002|Shotgun Reload|Armature.002|Shotg
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 127
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|Shotgun shoot|Armature.002|Shotgu
+      takeName: Armature.002|Armature.002|Armature.002|Shotgun shoot|Armature.002|Shotgu
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|T POSE|Armature.002|T POSE
+      takeName: Armature.002|Armature.002|Armature.002|T POSE|Armature.002|T POSE
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|DOWN
+      takeName: Armature.002|DOWN
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|UP.001
+      takeName: Armature.002|UP.001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.002|Armature.002|M4 Shoot|Armature.002|M4 Shoot
+        (1)
+      takeName: Armature.002|Armature.002|Armature.002|M4 Shoot|Armature.002|M4 Shoot
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
