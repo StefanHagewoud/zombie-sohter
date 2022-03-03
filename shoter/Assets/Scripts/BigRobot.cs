@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class BigRobot : AIBasics
 {
+    PhotonView pv;
+
     public GameObject GuidedRocket;
 
     public GameObject rightRocketSpawn;
@@ -11,6 +14,11 @@ public class BigRobot : AIBasics
 
     public float rocketReloadTime;
     bool reloading;
+
+    private void Awake()
+    {
+        pv = GetComponent<PhotonView>();
+    }
     public override void Update()
     {
         base.Update();
@@ -22,18 +30,21 @@ public class BigRobot : AIBasics
             if (nav.remainingDistance <= nav.stoppingDistance)
             {
                 nav.speed = 0;
+                
                 FireMainWeapon();
             }
+
         }
 
-        //if(rb.velocity <= )
-        //{
-        //    anim.SetFloat("Blend", 1f, 0.1f, Time.deltaTime);
-        //}
-        //else
-        //{
-        //    anim.SetFloat("Blend", 0f, 0.1f, Time.deltaTime);
-        //}
+        if(nav.remainingDistance <= nav.stoppingDistance)
+        {
+            anim.SetFloat("Blend", 1f, 0.1f, Time.deltaTime);
+            gameObject.transform.LookAt(targetDestination);
+        }
+        else
+        {
+            anim.SetFloat("Blend", 0f, 0.1f, Time.deltaTime);
+        }
     }
 
     public void FireMainWeapon()
@@ -56,10 +67,10 @@ public class BigRobot : AIBasics
     }
     public void InstantiateRocketRight()
     {
-        Instantiate(GuidedRocket, rightRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
+        PhotonNetwork.Instantiate(this.GuidedRocket.name, rightRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
     }
     public void InstantiateRocketLeft()
     {
-        Instantiate(GuidedRocket, leftRocketSpawn.transform.position, leftRocketSpawn.transform.rotation);
+        PhotonNetwork.Instantiate(this.GuidedRocket.name, leftRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
     }
 }
