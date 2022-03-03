@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class AIManager : MonoBehaviour
 {
+    PhotonView pv;
     public static AIManager instance;
 
     public GameObject[] robotPrefabs;
@@ -14,6 +16,7 @@ public class AIManager : MonoBehaviour
 
     private void Awake()
     {
+        pv = GetComponent<PhotonView>();
         instance = this;
         UpdatePlayers();
         SpawnRobot();
@@ -32,7 +35,7 @@ public class AIManager : MonoBehaviour
     {
         Transform spawnPos = spawnPositions[Random.Range(0, spawnPositions.Length)];
         GameObject currentRobotPrefab = robotPrefabs[Random.Range(0, robotPrefabs.Length)];
-        Instantiate(currentRobotPrefab, spawnPos.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(currentRobotPrefab.name, spawnPos.position, Quaternion.identity);
         robots.Add(currentRobotPrefab);
     }
 

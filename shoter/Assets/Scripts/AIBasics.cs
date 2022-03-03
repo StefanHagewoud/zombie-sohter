@@ -23,6 +23,7 @@ public class AIBasics : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         moveSpeed = nav.speed;
+        UpdateTarget();
         InvokeRepeating("UpdateTarget", 0, 10);
     }
 
