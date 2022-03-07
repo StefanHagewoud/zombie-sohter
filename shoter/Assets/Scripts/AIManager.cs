@@ -31,25 +31,20 @@ public class AIManager : MonoBehaviour
     {
 
     }
+    public void UpdatePlayers()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject robot in robots)
+        {
+            robot.GetComponent<AIBasics>().UpdateTarget();
+        }
+    }
     public void SpawnRobot()
     {
         Transform spawnPos = spawnPositions[Random.Range(0, spawnPositions.Length)];
         GameObject currentRobotPrefab = robotPrefabs[Random.Range(0, robotPrefabs.Length)];
         PhotonNetwork.Instantiate(currentRobotPrefab.name, spawnPos.position, Quaternion.identity);
         robots.Add(currentRobotPrefab);
-    }
-
-    public void UpdatePlayers()
-    {
-        players = GameObject.FindGameObjectsWithTag("Player");
-        foreach(GameObject player in players)
-        {
-            
-        }
-
-        foreach(GameObject robot in robots)
-        {
-            robot.GetComponent<AIBasics>().UpdateTarget();
-        }
     }
 }

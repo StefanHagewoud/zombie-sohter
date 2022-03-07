@@ -18,7 +18,7 @@ public class AIBasics : MonoBehaviour
     void Start()
     {
         _AIManager = FindObjectOfType<AIManager>();
-        players = _AIManager.players;
+        players = GameManager.Instance.players;
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -29,12 +29,16 @@ public class AIBasics : MonoBehaviour
 
     public void UpdateTarget()
     {
+        players = GameManager.Instance.players;
         GetClosestPlayer();
     }
 
     public virtual void Update()
     {
-        nav.destination = targetDestination.transform.position;
+        if(nav.destination == null)
+        {
+            GetClosestPlayer();
+        }
     }
 
     public void GetClosestPlayer()
@@ -59,5 +63,6 @@ public class AIBasics : MonoBehaviour
             }
         }
         targetDestination = currentClosest.transform;
+        nav.destination = targetDestination.transform.position;
     }
 }

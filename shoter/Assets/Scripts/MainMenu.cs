@@ -8,7 +8,7 @@ using Photon.Realtime;
 public class MainMenu : MonoBehaviourPunCallbacks
 {
     public TMP_InputField CreateGameInput;
-    public MainMenu Instance;
+    public static MainMenu Instance;
 
     [SerializeField] TMP_Text usernameInput;
     private void Awake()

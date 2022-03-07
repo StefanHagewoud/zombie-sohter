@@ -5,24 +5,30 @@ using Photon.Pun;
 
 public class GameManager : MonoBehaviour
 {
-    public PhotonView pv;
+    PhotonView pv;
 
-    public GameManager Instance;
+    public static GameManager Instance;
 
-    public GameObject[] Players;
+    public GameObject playerPrefab;
+    public Transform[] playerSpawns;
+
+    public GameObject[] players;
     public float revives;
     private void Awake()
     {
-        Instance = this;
         pv = GetComponent<PhotonView>();
+        Instance = this;
     }
     private void Start()
     {
-        PlayerWin();
+        Transform playerSpawn = playerSpawns[Random.Range(0, playerSpawns.Length)];
+        PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawn.position, playerSpawn.rotation);
+        UpdatePlayerlist();
     }
     public void UpdatePlayerlist()
     {
-        GameObject.FindGameObjectsWithTag("Players");
+        players = GameObject.FindGameObjectsWithTag("Players");
+        AIManager.instance.UpdatePlayers();
     }
     public void PlayerWin()
     {
