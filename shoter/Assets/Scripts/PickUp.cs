@@ -14,6 +14,11 @@ public class PickUp : MonoBehaviour
 
     public bool equipped;
 
+
+    public void Start()
+    {
+        fpsCam = Camera.main;
+    }
     private void Update()
     {
         //check if player is in range and E is pressed
@@ -31,7 +36,7 @@ public class PickUp : MonoBehaviour
         }
     }
 
-    private void PickUpItem()
+    public void PickUpItem()
     {
         //equipped = true;
         hit.transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;

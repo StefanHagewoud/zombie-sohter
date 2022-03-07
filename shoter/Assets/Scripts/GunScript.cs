@@ -31,6 +31,7 @@ public class GunScript : MonoBehaviour
     {
         bulletsleft = magazineSize;
         readyToShoot = true;
+        fpsCam = Camera.main;
     }
 
     private void Update()
