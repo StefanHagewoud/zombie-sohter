@@ -40,7 +40,7 @@ public class PickUp : MonoBehaviour
     {
         //equipped = true;
         hit.transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        hit.transform.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        hit.transform.gameObject.GetComponent<BoxCollider>().enabled = false;
         hit.transform.gameObject.GetComponent<GunScript>().enabled = true;
 
         //make weapon a child of the camera and move it to default position

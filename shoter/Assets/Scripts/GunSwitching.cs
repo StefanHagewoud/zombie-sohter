@@ -91,7 +91,7 @@ public class GunSwitching : MonoBehaviour
         //equipped = false;
         gunContainer.GetComponentInChildren<GunScript>().enabled = false;
         gunContainer.GetComponentInChildren<Rigidbody>().isKinematic = false;
-        gunContainer.GetComponentInChildren<BoxCollider>().isTrigger = false;
+        gunContainer.GetComponentInChildren<BoxCollider>().enabled = true;
 
 
         //transform.SetParent(null);

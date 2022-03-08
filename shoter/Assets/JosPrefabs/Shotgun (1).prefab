@@ -96,6 +96,7 @@ MonoBehaviour:
   aimSmoothing: 10
   recoil: 0.4
   bulletindicatorfornow: {fileID: 5688980350200005453, guid: 4bd0273606299e74a8d748e1e7c6bcc9, type: 3}
+  aimFieldOfView: 50
 --- !u!1 &3307374666189902701
 GameObject:
   m_ObjectHideFlags: 0

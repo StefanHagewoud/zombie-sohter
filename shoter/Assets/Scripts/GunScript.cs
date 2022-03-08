@@ -26,6 +26,7 @@ public class GunScript : MonoBehaviour
     public float aimSmoothing = 10;
     public float recoil;
     public GameObject bulletindicatorfornow;
+    public float aimFieldOfView;
 
     private void Start()
     {
@@ -114,11 +115,20 @@ public class GunScript : MonoBehaviour
     void DetermineAim()
     {
         Vector3 target = normalLocalPosition;
-        if (Input.GetMouseButton(1)) target = aimingLocalPosition;
+        if (Input.GetMouseButton(1))
+        {
+            target = aimingLocalPosition;
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, aimFieldOfView, aimSmoothing * Time.deltaTime);
+        }
+        else
+        {
+            fpsCam.fieldOfView = 60;
+        }
 
         Vector3 desiredPosition = Vector3.Lerp(transform.localPosition, target, Time.deltaTime * aimSmoothing);
 
         transform.localPosition = desiredPosition;
+        
     }
 
     void DetermineRecoil()
