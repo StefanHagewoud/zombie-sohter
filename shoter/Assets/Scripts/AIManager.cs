@@ -9,6 +9,7 @@ public class AIManager : MonoBehaviour
     public static AIManager instance;
 
     public GameObject[] robotPrefabs;
+    public GameObject summonObject;
     public List<GameObject> robots;
     public GameObject[] players;
 
@@ -44,7 +45,8 @@ public class AIManager : MonoBehaviour
     {
         Transform spawnPos = spawnPositions[Random.Range(0, spawnPositions.Length)];
         GameObject currentRobotPrefab = robotPrefabs[Random.Range(0, robotPrefabs.Length)];
-        PhotonNetwork.Instantiate(currentRobotPrefab.name, spawnPos.position, Quaternion.identity);
         robots.Add(currentRobotPrefab);
+        PhotonNetwork.Instantiate(summonObject.name, spawnPos.position, Quaternion.identity);
+        summonObject.GetComponent<RobotSummon>().robotToSpawn = currentRobotPrefab;
     }
 }
