@@ -122,7 +122,7 @@ public class GunScript : MonoBehaviour
         }
         else
         {
-            fpsCam.fieldOfView = 60;
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60, aimSmoothing * Time.deltaTime);
         }
 
         Vector3 desiredPosition = Vector3.Lerp(transform.localPosition, target, Time.deltaTime * aimSmoothing);

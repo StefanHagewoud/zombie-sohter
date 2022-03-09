@@ -5021,7 +5021,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   normalLocalPosition: {x: 0.345, y: 0.094, z: 0.776}
-  aimingLocalPosition: {x: 0.015, y: 0.126, z: 0.752}
+  aimingLocalPosition: {x: 0.01, y: 0.17, z: 0.66}
   aimSmoothing: 10
   recoil: 0.1
   bulletindicatorfornow: {fileID: 5688980350200005453, guid: 4bd0273606299e74a8d748e1e7c6bcc9, type: 3}

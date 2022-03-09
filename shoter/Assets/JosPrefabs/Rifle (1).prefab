@@ -5103,7 +5103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   timeBetweenShooting: 0.1
-  spread: 0.04
+  spread: 0.01
   range: 100
   reloadTime: 2
   timeBetweenShots: 0
@@ -5115,8 +5115,8 @@ MonoBehaviour:
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 0
-  normalLocalPosition: {x: 0.476, y: -0.156, z: 0.72}
-  aimingLocalPosition: {x: 0.009, y: 0.002, z: 0.699}
+  normalLocalPosition: {x: 0.374, y: -0.055, z: 0.718}
+  aimingLocalPosition: {x: 0, y: 0.07, z: 0.61}
   aimSmoothing: 10
   recoil: 0.1
   bulletindicatorfornow: {fileID: 5688980350200005453, guid: 4bd0273606299e74a8d748e1e7c6bcc9, type: 3}

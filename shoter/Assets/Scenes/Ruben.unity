@@ -437,11 +437,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff750bbcc3e09948b22c2270f6872b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robotPrefabs: []
+  summonObject: {fileID: 0}
   robots:
   - {fileID: 841682891}
   - {fileID: 500072777}
   - {fileID: 1767307236}
   players: []
+  spawnPositions: []
 --- !u!4 &326745541
 Transform:
   m_ObjectHideFlags: 0
@@ -1030,6 +1033,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4327c923a116fa843a33afa1cd0471e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  readyButton: {fileID: 0}
+  lobbySettingsPanel: {fileID: 0}
+  lobbyInfoPanel: {fileID: 0}
+  playerLobbyItem: {fileID: 0}
+  playersPanel: {fileID: 0}
 --- !u!1 &961952253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,6 +2275,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4354626096668945468, guid: 274a0118228184549b05ffc8602f71d9, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7418563022837451022, guid: 274a0118228184549b05ffc8602f71d9, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2782,6 +2794,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 144716966126520527, guid: 6bf92cbb2584bc34cb6bde73eab6ab7d, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6945760140067918817, guid: 6bf92cbb2584bc34cb6bde73eab6ab7d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2839,6 +2855,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1310203934759100320, guid: e4f896b3ca61b03498f95c4061fe6264, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6053711608241194569, guid: e4f896b3ca61b03498f95c4061fe6264, type: 3}
       propertyPath: m_Name
       value: Big Robot
