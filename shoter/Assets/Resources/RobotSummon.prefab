@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   summon: {fileID: 1042827400421263612}
-  robotToSpawn: {fileID: 7723564099277195611, guid: 6bf92cbb2584bc34cb6bde73eab6ab7d, type: 3}
+  robotToSpawn: {fileID: 7908276342471480244, guid: 274a0118228184549b05ffc8602f71d9, type: 3}
 --- !u!1001 &1893052377975033589
 PrefabInstance:
   m_ObjectHideFlags: 0
