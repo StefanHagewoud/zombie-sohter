@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     }
     public void UpdatePlayerlist()
     {
-        players = GameObject.FindGameObjectsWithTag("Players");
+        players = GameObject.FindGameObjectsWithTag("Player");
         AIManager.instance.UpdatePlayers();
     }
     public void PlayerWin()
