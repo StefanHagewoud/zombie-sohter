@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
+    PhotonView pv;
+
     public float moveSpeed = 10;
     float v;
     float h;
@@ -21,20 +24,33 @@ public class PlayerMovement : MonoBehaviour
 
     public float mouseSensitivity = 200f;
     float xRotation = 0f;
-    Transform cam;
+    public Transform cam;
     public Transform torso;
+
+
+    private void Awake()
+    {
+        pv = GetComponent<PhotonView>();
+    }
 
     void Start()
     {
-        cam = GetComponentInChildren<Camera>().transform;
-        Cursor.lockState = CursorLockMode.Locked;
+        if (pv.IsMine)
+        {
+            cam = GetComponentInChildren<Camera>().transform;
+            cam.GetComponent<Camera>().enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     void Update()
     {
-        Jump();
-        RotateCamera();
-        ControlSpeed();
+        if (pv.IsMine)
+        {
+            Jump();
+            RotateCamera();
+            ControlSpeed();
+        }
     }
 
     void RotateCamera()
@@ -53,7 +69,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move();
+        if (pv.IsMine)
+        {
+            Move();
+        }
     }
 
     void Move()
