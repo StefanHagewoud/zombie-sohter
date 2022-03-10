@@ -12,7 +12,10 @@ public class RobotSummon : MonoBehaviour
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
-        SpawnRobot();
+        if (pv.IsMine)
+        {
+            SpawnRobot();
+        }
     }
 
     public void SpawnRobot()

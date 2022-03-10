@@ -35,10 +35,12 @@ public class AIBasics : MonoBehaviour
 
     public virtual void Update()
     {
-        if(nav.destination == null)
+        
+        if (nav.destination == null)
         {
             GetClosestPlayer();
         }
+        nav.destination = targetDestination.transform.position;
     }
 
     public void GetClosestPlayer()
@@ -63,6 +65,6 @@ public class AIBasics : MonoBehaviour
             }
         }
         targetDestination = currentClosest.transform;
-        nav.destination = targetDestination.transform.position;
+
     }
 }

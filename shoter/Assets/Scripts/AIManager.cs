@@ -24,6 +24,11 @@ public class AIManager : MonoBehaviour
         pv = GetComponent<PhotonView>();
         instance = this;
 
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+
         terrainLeft = terrain.transform.position.x;
         terrainBottom = terrain.transform.position.z;
         terrainWidth = terrain.terrainData.size.x;

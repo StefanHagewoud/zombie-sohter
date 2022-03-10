@@ -1530,6 +1530,7 @@ GameObject:
   - component: {fileID: 2044078605124746911}
   - component: {fileID: 5005024095979698066}
   - component: {fileID: -4354626096668945468}
+  - component: {fileID: -8602751021756874242}
   m_Layer: 0
   m_Name: Small Robot
   m_TagString: Untagged
@@ -1630,10 +1631,27 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -8602751021756874242}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-8602751021756874242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7908276342471480244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &8380036825966638399
 GameObject:
   m_ObjectHideFlags: 0
