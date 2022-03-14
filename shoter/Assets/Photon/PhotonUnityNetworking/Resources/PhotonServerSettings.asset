@@ -43,6 +43,7 @@ MonoBehaviour:
   - RPC_SpawnPlayerLobbyItem
   - RPC_UpdatePlayerlist
   - RPC_GetHit
+  - RPC_UpdatePlayerList
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -24,12 +24,12 @@ public class AIBasics : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         moveSpeed = nav.speed;
         UpdateTarget();
-        InvokeRepeating("UpdateTarget", 0, 7);
+        InvokeRepeating("UpdateTarget", 0, 5);
     }
 
     public void UpdateTarget()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
+        players = GameManager.Instance.players;
         GetClosestPlayer();
     }
 
