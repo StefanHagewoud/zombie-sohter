@@ -10,6 +10,6 @@ public class RocketExplosion : MonoBehaviour
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
-        ps = GetComponentInChildren<ParticleSystem>();
+        PhotonNetwork.Destroy(gameObject);
     }
 }
