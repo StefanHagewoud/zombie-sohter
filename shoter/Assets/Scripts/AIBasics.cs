@@ -29,7 +29,7 @@ public class AIBasics : MonoBehaviour
 
     public void UpdateTarget()
     {
-        players = GameManager.Instance.players;
+        players = GameObject.FindGameObjectsWithTag("Player");
         GetClosestPlayer();
     }
 
