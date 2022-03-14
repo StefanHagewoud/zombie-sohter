@@ -86,6 +86,9 @@ MonoBehaviour:
   magazineSize: 24
   bulletsPerTap: 6
   allowButtonHold: 0
+  bulletsleft: 24
+  ammoTotal: 100
+  shotsFired: 0
   fpsCam: {fileID: 0}
   attackPoint: {fileID: 0}
   whatIsEnemy:

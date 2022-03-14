@@ -742,6 +742,9 @@ MonoBehaviour:
   magazineSize: 24
   bulletsPerTap: 6
   allowButtonHold: 0
+  bulletsleft: 0
+  ammoTotal: 0
+  shotsFired: 0
   fpsCam: {fileID: 626039854}
   attackPoint: {fileID: 476854590}
   whatIsEnemy:
@@ -5693,6 +5696,9 @@ MonoBehaviour:
   magazineSize: 20
   bulletsPerTap: 1
   allowButtonHold: 0
+  bulletsleft: 0
+  ammoTotal: 0
+  shotsFired: 0
   fpsCam: {fileID: 626039854}
   attackPoint: {fileID: 616534336}
   whatIsEnemy:
@@ -5878,6 +5884,10 @@ PrefabInstance:
     - target: {fileID: 198960243067881540, guid: bfac0e52eab8b4c4f90d7a515d830af8, type: 3}
       propertyPath: m_Name
       value: Rifle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 198960243067881541, guid: bfac0e52eab8b4c4f90d7a515d830af8, type: 3}
+      propertyPath: ammoTotal
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 198960243067881541, guid: bfac0e52eab8b4c4f90d7a515d830af8, type: 3}
       propertyPath: normalLocalPosition.x
@@ -11119,6 +11129,9 @@ MonoBehaviour:
   magazineSize: 24
   bulletsPerTap: 6
   allowButtonHold: 0
+  bulletsleft: 0
+  ammoTotal: 0
+  shotsFired: 0
   fpsCam: {fileID: 626039854}
   attackPoint: {fileID: 1303693419}
   whatIsEnemy:
@@ -11646,6 +11659,9 @@ MonoBehaviour:
   magazineSize: 35
   bulletsPerTap: 1
   allowButtonHold: 1
+  bulletsleft: 0
+  ammoTotal: 0
+  shotsFired: 0
   fpsCam: {fileID: 626039854}
   attackPoint: {fileID: 1537409320}
   whatIsEnemy:
@@ -22107,6 +22123,10 @@ PrefabInstance:
     - target: {fileID: 1859115779627772278, guid: 70f83d8c875be4a4c8a15946d11aca02, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859115779758602775, guid: 70f83d8c875be4a4c8a15946d11aca02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6100958192709744232, guid: 70f83d8c875be4a4c8a15946d11aca02, type: 3}
       propertyPath: m_LocalPosition.y

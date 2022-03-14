@@ -9,7 +9,10 @@ public class GunScript : MonoBehaviour
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
-    int bulletsleft, bulletsShot;
+    public int bulletsleft;
+    int bulletsShot;
+    public int ammoTotal;
+    public int shotsFired;
 
     //bools
     bool shooting, readyToShoot, reloading;
@@ -86,6 +89,7 @@ public class GunScript : MonoBehaviour
 
         bulletsleft--;
         bulletsShot--;
+        shotsFired++;
 
         Invoke("ResetShot", timeBetweenShooting);
 
@@ -108,8 +112,17 @@ public class GunScript : MonoBehaviour
 
     private void ReloadFinished()
     {
+        if (ammoTotal <= 0 && bulletsleft <= 0)
+        {
+            magazineSize = 0;
+        }
+
+        ammoTotal -= shotsFired;
         bulletsleft = magazineSize;
         reloading = false;
+        shotsFired -= shotsFired;
+
+        
     }
 
     void DetermineAim()
