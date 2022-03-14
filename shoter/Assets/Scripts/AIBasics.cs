@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 public class AIBasics : MonoBehaviour
 {
+    PhotonView pv;
+
     [HideInInspector]public NavMeshAgent nav;
     [HideInInspector] public Animator anim;
     [HideInInspector] public Rigidbody rb;
@@ -15,6 +18,10 @@ public class AIBasics : MonoBehaviour
     //Targeting
     public GameObject[] players;
     [HideInInspector]public Transform targetDestination;
+    private void Awake()
+    {
+        pv = GetComponent<PhotonView>();
+    }
     void Start()
     {
         _AIManager = FindObjectOfType<AIManager>();
@@ -23,11 +30,16 @@ public class AIBasics : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         moveSpeed = nav.speed;
-        UpdateTarget();
+        pv.RPC("UpdateTarget",RpcTarget.All);
         InvokeRepeating("UpdateTarget", 0, 5);
     }
 
     public void UpdateTarget()
+    {
+        pv.RPC("UpdateTarget", RpcTarget.All);
+    }
+    [PunRPC]
+    void RPC_UpdateTarget()
     {
         players = GameManager.Instance.players;
         GetClosestPlayer();
@@ -38,8 +50,8 @@ public class AIBasics : MonoBehaviour
         
         if (nav.destination == null)
         {
-            UpdateTarget();
-            if(targetDestination == null)
+            pv.RPC("UpdateTarget", RpcTarget.All);
+            if (targetDestination == null)
             {
                 InvokeRepeating("UpdateTarget", 0, 7);
             }

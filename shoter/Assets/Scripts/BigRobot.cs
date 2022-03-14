@@ -5,8 +5,6 @@ using Photon.Pun;
 
 public class BigRobot : AIBasics
 {
-    PhotonView pv;
-
     public GameObject GuidedRocket;
 
     public GameObject rightRocketSpawn;
@@ -15,10 +13,7 @@ public class BigRobot : AIBasics
     public float rocketReloadTime;
     bool reloading;
     float damping = 1f;
-    private void Awake()
-    {
-        pv = GetComponent<PhotonView>();
-    }
+
     public override void Update()
     {
         base.Update();
