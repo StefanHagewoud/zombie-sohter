@@ -30,16 +30,11 @@ public class AIBasics : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         moveSpeed = nav.speed;
-        pv.RPC("UpdateTarget",RpcTarget.All);
+        UpdateTarget();
         InvokeRepeating("UpdateTarget", 0, 5);
     }
 
     public void UpdateTarget()
-    {
-        pv.RPC("UpdateTarget", RpcTarget.All);
-    }
-    [PunRPC]
-    void RPC_UpdateTarget()
     {
         players = GameManager.Instance.players;
         GetClosestPlayer();
@@ -50,7 +45,7 @@ public class AIBasics : MonoBehaviour
         
         if (nav.destination == null)
         {
-            pv.RPC("UpdateTarget", RpcTarget.All);
+            UpdateTarget();
             if (targetDestination == null)
             {
                 InvokeRepeating("UpdateTarget", 0, 7);

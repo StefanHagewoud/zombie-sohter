@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         AIManager.instance.UpdatePlayers();
-        pv.RPC("RPC_UpdatePlayerList", RpcTarget.All);
     }
     [PunRPC]
     void RPC_UpdatePlayerList()
