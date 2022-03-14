@@ -14,7 +14,7 @@ public class BigRobot : AIBasics
 
     public float rocketReloadTime;
     bool reloading;
-
+    float damping = 1f;
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
@@ -39,7 +39,10 @@ public class BigRobot : AIBasics
         if(nav.remainingDistance <= nav.stoppingDistance)
         {
             anim.SetFloat("Blend", 1f, 0.1f, Time.deltaTime);
-            gameObject.transform.LookAt(targetDestination);
+            var lookPos = targetDestination.position - transform.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
         }
         else
         {

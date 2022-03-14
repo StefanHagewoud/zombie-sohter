@@ -6,6 +6,8 @@ using TMPro;
 
 public class GunScript : MonoBehaviour
 {
+    PhotonView pv;
+
     //Gun Stats
     public int damage;
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
@@ -35,6 +37,11 @@ public class GunScript : MonoBehaviour
     public GameObject bulletindicatorfornow;
     public float aimFieldOfView;
 
+    private void Awake()
+    {
+        pv = GetComponent<PhotonView>();
+    }
+
     private void Start()
     {
         bulletsleft = magazineSize;
@@ -46,7 +53,7 @@ public class GunScript : MonoBehaviour
     {
         MyInput();
         DetermineAim();
-        ammoText.text = $"{bulletsleft}/{ammoTotal}";
+        //ammoText.text = $"{bulletsleft}/{ammoTotal}";
     }
 
     private void MyInput()
@@ -85,7 +92,7 @@ public class GunScript : MonoBehaviour
 
             if (rayHit.collider.CompareTag("Enemy"))
             {
-                rayHit.collider.GetComponent<TargetEnemy>().TakeDamage(damage);
+                rayHit.collider.GetComponent<Health>().GetHit(damage);
             }
         }
 

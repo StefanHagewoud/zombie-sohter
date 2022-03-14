@@ -41,6 +41,8 @@ MonoBehaviour:
   - RespawnSpaceship
   - SpawnPlayerLobbyItem
   - RPC_SpawnPlayerLobbyItem
+  - RPC_UpdatePlayerlist
+  - RPC_GetHit
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -38,7 +38,11 @@ public class AIBasics : MonoBehaviour
         
         if (nav.destination == null)
         {
-            GetClosestPlayer();
+            UpdateTarget();
+            if(targetDestination == null)
+            {
+                InvokeRepeating("UpdateTarget", 0, 7);
+            }
         }
         nav.destination = targetDestination.transform.position;
     }
@@ -65,6 +69,5 @@ public class AIBasics : MonoBehaviour
             }
         }
         targetDestination = currentClosest.transform;
-
     }
 }
