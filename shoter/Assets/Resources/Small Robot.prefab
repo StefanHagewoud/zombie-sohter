@@ -1532,8 +1532,9 @@ GameObject:
   - component: {fileID: -4354626096668945468}
   - component: {fileID: -8602751021756874242}
   - component: {fileID: 7177651136245288472}
-  - component: {fileID: 5271852411593535681}
   - component: {fileID: 8404267419143064384}
+  - component: {fileID: -572548494380837728}
+  - component: {fileID: 1124291892335669260}
   m_Layer: 0
   m_Name: Small Robot
   m_TagString: Enemy
@@ -1550,7 +1551,7 @@ Transform:
   m_GameObject: {fileID: 7908276342471480244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 239.84659, y: 250.23424, z: -71.19549}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalScale: {x: 0.104531, y: 0.104531, z: 0.104531}
   m_Children:
   - {fileID: 1892869265472149904}
   - {fileID: 4414665856683439316}
@@ -1572,9 +1573,11 @@ MonoBehaviour:
   nav: {fileID: 0}
   anim: {fileID: 0}
   rb: {fileID: 0}
+  damage: 15
   moveSpeed: 0
   players: []
   targetDestination: {fileID: 0}
+  AttackCooldown: 2
 --- !u!195 &2044078605124746911
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1585,11 +1588,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 5
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1673,20 +1676,6 @@ MonoBehaviour:
   currentHealth: 0
   isRobot: 1
   explosion: {fileID: 5969530008559067649, guid: 1099eb864b5059d45bdf5b59925aac67, type: 3}
---- !u!64 &5271852411593535681
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7908276342471480244}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &8404267419143064384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1712,6 +1701,36 @@ MonoBehaviour:
     LayerIndex: 1
   - SynchronizeType: 1
     LayerIndex: 2
+--- !u!54 &-572548494380837728
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7908276342471480244}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &1124291892335669260
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7908276342471480244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.313831
+  m_Height: 7.846553
+  m_Direction: 1
+  m_Center: {x: 0.09408013, y: 8.319278, z: -0.08203729}
 --- !u!1 &8380036825966638399
 GameObject:
   m_ObjectHideFlags: 0

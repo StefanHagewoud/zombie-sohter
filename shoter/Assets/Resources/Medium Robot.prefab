@@ -1036,8 +1036,9 @@ GameObject:
   - component: {fileID: 144716966126520527}
   - component: {fileID: 318995103902931002}
   - component: {fileID: -3875068258773846513}
-  - component: {fileID: 842819697259836881}
   - component: {fileID: -7791151523407994402}
+  - component: {fileID: 6432208593594821662}
+  - component: {fileID: 4205495839078970989}
   m_Layer: 0
   m_Name: Medium Robot
   m_TagString: Enemy
@@ -1076,10 +1077,11 @@ MonoBehaviour:
   nav: {fileID: 0}
   anim: {fileID: 0}
   rb: {fileID: 0}
+  damage: 2
   moveSpeed: 0
   players: []
   targetDestination: {fileID: 0}
-  MagReloadTime: 0
+  MagReloadTime: 3
 --- !u!195 &841682894
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1111,7 +1113,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7723564099277195611}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: ae73c084138a6a042be40d94b1eb92f0, type: 3}
   m_Controller: {fileID: 9100000, guid: 5b9e4d25a77372f4f9a7dff4f0aea394, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -1178,20 +1180,6 @@ MonoBehaviour:
   currentHealth: 0
   isRobot: 1
   explosion: {fileID: 5969530008559067649, guid: 1099eb864b5059d45bdf5b59925aac67, type: 3}
---- !u!64 &842819697259836881
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723564099277195611}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &-7791151523407994402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,6 +1202,36 @@ MonoBehaviour:
     LayerIndex: 1
   - SynchronizeType: 1
     LayerIndex: 2
+--- !u!54 &6432208593594821662
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723564099277195611}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &4205495839078970989
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723564099277195611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.6984049
+  m_Height: 5.850525
+  m_Direction: 1
+  m_Center: {x: 0, y: 8.835703, z: 0.17117818}
 --- !u!1 &7809970718945281646
 GameObject:
   m_ObjectHideFlags: 0

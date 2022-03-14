@@ -9,10 +9,11 @@ public class AIBasics : MonoBehaviour
     PhotonView pv;
 
     [HideInInspector]public NavMeshAgent nav;
-    [HideInInspector] public Animator anim;
+    [HideInInspector]public Animator anim;
     [HideInInspector] public Rigidbody rb;
     AIManager _AIManager;
 
+    public float damage;
     
     [HideInInspector]public float moveSpeed;
     //Targeting
@@ -42,14 +43,10 @@ public class AIBasics : MonoBehaviour
 
     public virtual void Update()
     {
-        
         if (nav.destination == null)
         {
             UpdateTarget();
-            if (targetDestination == null)
-            {
-                InvokeRepeating("UpdateTarget", 0, 7);
-            }
+            PhotonNetwork.Destroy(gameObject);
         }
         nav.destination = targetDestination.transform.position;
     }

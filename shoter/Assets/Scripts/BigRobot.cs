@@ -12,7 +12,7 @@ public class BigRobot : AIBasics
 
     public float rocketReloadTime;
     bool reloading;
-    float damping = 1f;
+    float damping = 1.5f;
 
     public override void Update()
     {
@@ -66,9 +66,11 @@ public class BigRobot : AIBasics
     public void InstantiateRocketRight()
     {
         PhotonNetwork.Instantiate(this.GuidedRocket.name, rightRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
+        GuidedRocket.GetComponent<GuidedRocket>().damage = damage;
     }
     public void InstantiateRocketLeft()
     {
         PhotonNetwork.Instantiate(this.GuidedRocket.name, leftRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
+        GuidedRocket.GetComponent<GuidedRocket>().damage = damage;
     }
 }

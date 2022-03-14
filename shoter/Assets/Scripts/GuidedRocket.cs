@@ -9,7 +9,7 @@ public class GuidedRocket : MonoBehaviour
     PhotonView pv;
     public float speed;
     public GameObject explosion;
-
+    [HideInInspector] public float damage;
     [HideInInspector]public GameObject[] players;
     public GameObject target;
     private void Awake()
@@ -51,6 +51,7 @@ public class GuidedRocket : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         PhotonNetwork.Instantiate(this.explosion.name, transform.position, Quaternion.identity);
+        explosion.GetComponent<RocketExplosion>().damage = damage;
         PhotonNetwork.Destroy(gameObject);
     }
 }
