@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using TMPro;
 
 public class GunScript : MonoBehaviour
 {
@@ -12,7 +14,9 @@ public class GunScript : MonoBehaviour
     public int bulletsleft;
     int bulletsShot;
     public int ammoTotal;
-    public int shotsFired;
+    int shotsFired;
+
+    public TMP_Text ammoText;
 
     //bools
     bool shooting, readyToShoot, reloading;
@@ -42,6 +46,7 @@ public class GunScript : MonoBehaviour
     {
         MyInput();
         DetermineAim();
+        ammoText.text = $"{bulletsleft}/{ammoTotal}";
     }
 
     private void MyInput()
@@ -91,6 +96,7 @@ public class GunScript : MonoBehaviour
         bulletsShot--;
         shotsFired++;
 
+
         Invoke("ResetShot", timeBetweenShooting);
 
         if (bulletsShot > 0 && bulletsleft > 0)
@@ -115,14 +121,13 @@ public class GunScript : MonoBehaviour
         if (ammoTotal <= 0 && bulletsleft <= 0)
         {
             magazineSize = 0;
+            ammoTotal = 0;
         }
 
         ammoTotal -= shotsFired;
         bulletsleft = magazineSize;
         reloading = false;
         shotsFired -= shotsFired;
-
-        
     }
 
     void DetermineAim()
