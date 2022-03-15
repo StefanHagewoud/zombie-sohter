@@ -17,6 +17,7 @@ public class RocketExplosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other);
         if(other.gameObject.tag == "Player")
         {
             other.GetComponent<Health>().GetHit(damage);

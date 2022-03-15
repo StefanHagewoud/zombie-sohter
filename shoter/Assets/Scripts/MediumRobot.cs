@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class MediumRobot : AIBasics
 {
@@ -36,7 +37,6 @@ public class MediumRobot : AIBasics
             anim.SetFloat("Blend", 0f, 0.1f, Time.deltaTime);
         }
     }
-
 
     public void FireMainWeapon()
     {

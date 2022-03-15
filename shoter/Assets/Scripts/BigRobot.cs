@@ -18,7 +18,6 @@ public class BigRobot : AIBasics
     {
         base.Update();
 
-
         if (!reloading)
         {
             nav.speed = moveSpeed;
@@ -31,7 +30,7 @@ public class BigRobot : AIBasics
 
         }
 
-        if(nav.remainingDistance <= nav.stoppingDistance)
+        if (nav.remainingDistance <= nav.stoppingDistance)
         {
             anim.SetFloat("Blend", 1f, 0.1f, Time.deltaTime);
             var lookPos = targetDestination.position - transform.position;
