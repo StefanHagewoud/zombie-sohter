@@ -13,22 +13,26 @@ public class RocketExplosion : MonoBehaviour
     {
         pv = GetComponent<PhotonView>();
         StartCoroutine(HitBox());
+        ExplosionDamage(hitBoxAOE.transform.position, 1.5f);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void ExplosionDamage(Vector3 center, float radius)
     {
-        Debug.Log(other);
-        if(other.gameObject.tag == "Player")
+        Collider[] hitColliders = Physics.OverlapSphere(center, radius);
+        foreach (var hitCollider in hitColliders)
         {
-            other.GetComponent<Health>().GetHit(damage);
+            if(hitCollider.gameObject.tag == "Player")
+            {
+                hitCollider.GetComponent<Health>().GetHit(damage);
+            }
         }
     }
 
     IEnumerator HitBox()
     {
-        hitBoxAOE.SetActive(true);
+        hitBoxAOE.GetComponent<Collider>().enabled = true;
         yield return new WaitForSecondsRealtime(0.5f);
-        hitBoxAOE.SetActive(false);
+        hitBoxAOE.GetComponent<Collider>().enabled = false;
         PhotonNetwork.Destroy(gameObject);
     }
 }

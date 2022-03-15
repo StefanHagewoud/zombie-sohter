@@ -42,6 +42,8 @@ public class BigRobot : AIBasics
         {
             anim.SetFloat("Blend", 0f, 0.1f, Time.deltaTime);
         }
+
+        
     }
 
     public void FireMainWeapon()

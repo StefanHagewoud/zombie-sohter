@@ -9,7 +9,9 @@ public class SmallRobot : AIBasics
 
     float damping = 2f;
 
-    bool attacking; public override void Update()
+    bool attacking; 
+    
+    public override void Update()
     {
         base.Update();
 
@@ -45,7 +47,7 @@ public class SmallRobot : AIBasics
         {
             anim.SetLayerWeight(anim.GetLayerIndex("Melee"), 1);
             anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 0);
-            yield return new WaitForSecondsRealtime(4);
+            yield return new WaitForSecondsRealtime(0.24f);
             anim.SetLayerWeight(anim.GetLayerIndex("Melee"), 0);
             anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 1);
             StartCoroutine(Cooldown());

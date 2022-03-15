@@ -18,7 +18,7 @@ public class AIBasics : MonoBehaviour
     [HideInInspector]public float moveSpeed;
     //Targeting
     public GameObject[] players;
-    [HideInInspector]public Transform targetDestination;
+    public Transform targetDestination;
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
@@ -38,17 +38,21 @@ public class AIBasics : MonoBehaviour
     public void UpdateTarget()
     {
         players = GameManager.Instance.players;
+        if (players == null)
+            return;
         GetClosestPlayer();
     }
 
     public virtual void Update()
     {
-        if (nav.destination == null)
+        if (targetDestination == null)
         {
             UpdateTarget();
-            PhotonNetwork.Destroy(gameObject);
         }
-        nav.destination = targetDestination.transform.position;
+        else
+        {
+            nav.destination = targetDestination.transform.position;
+        }
     }
 
     public void GetClosestPlayer()

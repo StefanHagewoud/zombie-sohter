@@ -42,8 +42,12 @@ public class Health : MonoBehaviour
                 PhotonNetwork.Instantiate(explosion.name, gameObject.transform.position, Quaternion.identity);
                 PhotonNetwork.Destroy(gameObject);
             }
+            else
+            {
+                PhotonNetwork.LoadLevel(0);
+                PhotonNetwork.Destroy(gameObject);
+            }
 
-            PhotonNetwork.Destroy(gameObject);
         }
     }
 }

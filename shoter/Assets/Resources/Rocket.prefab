@@ -9711,7 +9711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   explosion: {fileID: 6649290706189168108, guid: 6bb33349965832643859ae53b4a0124a, type: 3}
-  damage: 50
+  damage: 25
   players: []
   target: {fileID: 0}
 --- !u!114 &-7931374021727538143

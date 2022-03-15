@@ -43,10 +43,17 @@ public class GuidedRocket : MonoBehaviour
 
     void Update()
     {
-        Vector3 direction = target.transform.position - transform.position;
-        Quaternion toRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, 0.5f * Time.deltaTime);
-        transform.position += transform.forward * speed * Time.deltaTime;
+        if(target == null)
+        {
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
+        else
+        {
+            Vector3 direction = target.transform.position - transform.position;
+            Quaternion toRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, 0.5f * Time.deltaTime);
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

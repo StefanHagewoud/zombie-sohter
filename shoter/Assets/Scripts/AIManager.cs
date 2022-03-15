@@ -14,7 +14,7 @@ public class AIManager : MonoBehaviour
     public GameObject[] players;
 
     public Transform[] spawnPositions;
-
+    bool waveStarted;
     //RandomSpawnPosition
     public static float terrainLeft, terrainRight, terrainTop, terrainBottom, terrainWidth, terrainLength, terrainHeight;
     public LayerMask groundLayer;
@@ -40,7 +40,16 @@ public class AIManager : MonoBehaviour
         UpdatePlayers();
         WaveStart();
     }
-
+    private void Update()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            if (Input.GetKeyUp(KeyCode.P))
+            {
+                SpawnRobot(10, 0);
+            }
+        }
+    }
     public void WaveStart()
     {
         StartCoroutine(FirstWave());
@@ -71,7 +80,7 @@ public class AIManager : MonoBehaviour
         RaycastHit hit;
         float randomPositionX, randomPositionY, randomPositionZ;
         Vector3 randomPosition = Vector3.zero;
-
+        waveStarted = true;
         do
         {
             i++;
