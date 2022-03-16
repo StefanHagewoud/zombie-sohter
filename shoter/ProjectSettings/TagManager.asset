@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - PickUpAble
   - Terrain
+  - LootBox
   layers:
   - Default
   - TransparentFX

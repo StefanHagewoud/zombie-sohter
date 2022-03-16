@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e22cb13d3ee02a4f972e9ea69979d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 15
   timeBetweenShooting: 1
   spread: 0.07
   range: 50
@@ -88,7 +88,7 @@ MonoBehaviour:
   allowButtonHold: 0
   bulletsleft: 24
   ammoTotal: 100
-  shotsFired: 0
+  ammoText: {fileID: 0}
   fpsCam: {fileID: 0}
   attackPoint: {fileID: 0}
   whatIsEnemy:

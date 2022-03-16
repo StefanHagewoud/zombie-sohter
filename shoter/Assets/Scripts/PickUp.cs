@@ -32,6 +32,11 @@ public class PickUp : MonoBehaviour
                 {
                     PickUpItem();
                 }
+
+                if (hit.transform.CompareTag("LootBox"))
+                {
+                    GameObject.FindGameObjectWithTag("LootBox").GetComponent<LootBox>().ShowItem();
+                }
             }
         }
     }
