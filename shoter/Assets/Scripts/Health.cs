@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     [HideInInspector] public PhotonView pv;
 
+    public GameObject playerHandler;
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
     bool dead;
@@ -44,10 +45,9 @@ public class Health : MonoBehaviour
             }
             else
             {
-                PhotonNetwork.LoadLevel(0);
+                playerHandler.GetComponent<PlayerHandler>().ReSpawnPlayer();
                 PhotonNetwork.Destroy(gameObject);
             }
-
         }
     }
 }

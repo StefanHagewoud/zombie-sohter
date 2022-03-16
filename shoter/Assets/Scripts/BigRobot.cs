@@ -5,10 +5,13 @@ using Photon.Pun;
 
 public class BigRobot : AIBasics
 {
+    [Header("Weapons")]
     public GameObject GuidedRocket;
-
     public GameObject rightRocketSpawn;
     public GameObject leftRocketSpawn;
+    public ParticleSystem rightRocketParticle;
+    public ParticleSystem leftRocketParticle;
+
 
     public float rocketReloadTime;
     bool reloading;
@@ -66,11 +69,13 @@ public class BigRobot : AIBasics
     }
     public void InstantiateRocketRight()
     {
+        rightRocketParticle.Emit(1);
         PhotonNetwork.Instantiate(this.GuidedRocket.name, rightRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
         GuidedRocket.GetComponent<GuidedRocket>().damage = damage;
     }
     public void InstantiateRocketLeft()
     {
+        leftRocketParticle.Emit(1);
         PhotonNetwork.Instantiate(this.GuidedRocket.name, leftRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
         GuidedRocket.GetComponent<GuidedRocket>().damage = damage;
     }

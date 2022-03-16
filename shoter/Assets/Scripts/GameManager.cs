@@ -9,11 +9,16 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
-    public GameObject playerPrefab;
+    public GameObject playerHandler;
+    public GameObject playerSpawn;
+
     public Transform[] playerSpawns;
 
     public GameObject[] players;
-    public float revives;
+
+    [Header("PlayerSpawns")]
+    public float respawns;
+
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
@@ -22,8 +27,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Transform playerSpawn = playerSpawns[Random.Range(0, playerSpawns.Length)];
-        PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawn.position, playerSpawn.rotation);
-        UpdatePlayerlist();
+        PhotonNetwork.Instantiate(this.playerHandler.name, playerSpawn.position, playerSpawn.rotation);
     }
     public void UpdatePlayerlist()
     {

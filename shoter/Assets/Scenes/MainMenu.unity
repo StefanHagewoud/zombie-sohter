@@ -1621,7 +1621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CreateGameInput: {fileID: 0}
-  Instance: {fileID: 0}
   usernameInput: {fileID: 1664583451}
 --- !u!114 &425791301
 MonoBehaviour:

@@ -755,6 +755,8 @@ MonoBehaviour:
   GuidedRocket: {fileID: 6270158503819681132, guid: 6334ac70ec4fb3441a704a58b704b403, type: 3}
   rightRocketSpawn: {fileID: 6190345708002446712}
   leftRocketSpawn: {fileID: 4849679233247201797}
+  rightRocketParticle: {fileID: 6395801362369151753}
+  leftRocketParticle: {fileID: 6395801362101071262}
   rocketReloadTime: 10
 --- !u!195 &2387335360166891637
 NavMeshAgent:
@@ -866,6 +868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 0}
+  playerHandler: {fileID: 0}
   maxHealth: 200
   currentHealth: 0
   isRobot: 1
@@ -1016,7 +1019,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5878,7 +5881,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
