@@ -5052,7 +5052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198960243067881540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.753, y: 1.367837, z: -0.1377796}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.80000037, y: 0.8, z: 0.80000067}
   m_Children:
   - {fileID: 198960241320904980}
@@ -5112,7 +5112,7 @@ MonoBehaviour:
   allowButtonHold: 1
   bulletsleft: 35
   ammoTotal: 200
-  shotsFired: 0
+  ammoText: {fileID: 0}
   fpsCam: {fileID: 0}
   attackPoint: {fileID: 0}
   whatIsEnemy:
