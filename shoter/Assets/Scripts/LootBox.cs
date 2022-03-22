@@ -35,10 +35,12 @@ public class LootBox : MonoBehaviour
     {
         if (slotFull == false)
         {
+            GameObject.FindGameObjectWithTag("Plakband").GetComponent<Plakband>().Playanimation();
             animator.SetBool("Open", true);
             Invoke("SpawnItem", 2);
             lootBoxEffect.Play();
             lootBoxEffect2.Play();
+            slotFull = true;
         }
     }
 
@@ -47,7 +49,7 @@ public class LootBox : MonoBehaviour
         Transform item = lootTable.GetRandom();
         Instantiate(item, itemHolder);
         itemHolder.gameObject.SetActive(true);
-        slotFull = true;
+        //slotFull = true;
         Invoke("HideItem", 10);
     }
 }

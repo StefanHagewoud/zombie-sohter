@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PickUp : MonoBehaviour
 {
@@ -9,10 +10,10 @@ public class PickUp : MonoBehaviour
     public Camera fpsCam;
     public RaycastHit hit;
     public float range;
-
     public float dropForwardForce, dropUpwardForce;
 
     public bool equipped;
+    public TMP_Text ammoText;
 
 
     public void Start()
