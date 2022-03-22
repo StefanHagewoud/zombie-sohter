@@ -41,6 +41,7 @@ public class Health : MonoBehaviour
             if (isRobot == true)
             {
                 PhotonNetwork.Instantiate(explosion.name, gameObject.transform.position, Quaternion.identity);
+                AIManager.instance.robotsAmount--;
                 PhotonNetwork.Destroy(gameObject);
             }
             else

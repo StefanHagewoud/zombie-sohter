@@ -6,16 +6,23 @@ using Photon.Pun;
 public class AIManager : MonoBehaviour
 {
     PhotonView pv;
+
+    [Header("ESSENTIALS")]
     public static AIManager instance;
     public Terrain terrain;
     public GameObject[] robotPrefabs;
     public GameObject summonObject;
     public List<GameObject> robots;
+    public float robotsAmount;
     public GameObject[] players;
 
-    public Transform[] spawnPositions;
+    [Header("WAVES")]
     bool waveStarted;
-    //RandomSpawnPosition
+    public float robotWaveStartAmount;
+    public float robotWaveAmountMultiplier;
+    float robotWaveAmount;
+
+    [Header("SPAWNS")]
     public static float terrainLeft, terrainRight, terrainTop, terrainBottom, terrainWidth, terrainLength, terrainHeight;
     public LayerMask groundLayer;
     Transform spawnPos;
@@ -46,12 +53,21 @@ public class AIManager : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.P))
             {
-                SpawnRobot(10, 0);
+                SpawnRobot(10, 0);  
+            }
+        }
+        if(waveStarted == true)
+        {
+            if(robotsAmount == 0)
+            {
+                waveStarted = false;
+                NextWave();
             }
         }
     }
     public void WaveStart()
     {
+        waveStarted = true;
         StartCoroutine(FirstWave());
         UpdatePlayers();
         IEnumerator FirstWave()
@@ -59,6 +75,13 @@ public class AIManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(4);
             SpawnRobot(10, 0);
         }
+    }
+    public void NextWave()
+    {
+        waveStarted = true;
+        int _robotWaveAmount = ((int)robotWaveAmount);
+        SpawnRobot(_robotWaveAmount, 0);
+        robotWaveAmount += players.Length * robotWaveAmountMultiplier;
     }
 
     public void UpdatePlayers()
@@ -81,6 +104,7 @@ public class AIManager : MonoBehaviour
         float randomPositionX, randomPositionY, randomPositionZ;
         Vector3 randomPosition = Vector3.zero;
         waveStarted = true;
+
         do
         {
             i++;
@@ -95,6 +119,7 @@ public class AIManager : MonoBehaviour
             randomPosition = new Vector3(randomPositionX, randomPositionY, randomPositionZ);
             GameObject currentRobotPrefab = robotPrefabs[Random.Range(0, robotPrefabs.Length)];
             PhotonNetwork.Instantiate(summonObject.name, randomPosition, Quaternion.identity);
+            robotsAmount += 1;
             summonObject.GetComponent<RobotSummon>().robotToSpawn = currentRobotPrefab;
         }
         while (i < amount);
