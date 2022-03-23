@@ -22,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckDistance;
     public bool isGrounded;
 
+    public Animator character;
+    //public Animation walking;
+
     public float mouseSensitivity = 200f;
     float xRotation = 0f;
     public Transform cam;
@@ -64,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         cam.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
 
-        torso.localRotation = cam.localRotation;
+        //character.SetFloat("Blend", cam.localRotation.x);
     }
 
     void FixedUpdate()
@@ -72,6 +75,14 @@ public class PlayerMovement : MonoBehaviour
         if (pv.IsMine)
         {
             Move();
+            if (move.z != 0.0f || move.x != 0.0f)
+            {
+                character.SetBool("Walking", true);
+            }
+            else
+            {
+                character.SetBool("Walking", false);
+            }
         }
     }
 
@@ -86,13 +97,13 @@ public class PlayerMovement : MonoBehaviour
         move.x = h;
         move.z = v;
 
-        GetComponent<Transform>().Translate(move * moveSpeed * Time.deltaTime);
+        GetComponent<Transform>().Translate(move * moveSpeed * Time.deltaTime);        
     }
     void ControlSpeed()
     {
         if (Input.GetKey(sprintKey) && isGrounded)
         {
-            moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, acceleration * Time.deltaTime);
+            moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, acceleration * Time.deltaTime);          
         }
         else
         {

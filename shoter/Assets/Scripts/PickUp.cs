@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using TMPro;
 
 public class PickUp : MonoBehaviour
 {
     public Transform player, gunContainer;
+    public TwoBoneIKConstraint rightHandIK;
 
     public Camera fpsCam;
     public RaycastHit hit;

@@ -87,7 +87,8 @@ MonoBehaviour:
   bulletsPerTap: 6
   allowButtonHold: 0
   bulletsleft: 24
-  ammoTotal: 100
+  ammoTotal: 24
+  shotsFired: 0
   ammoText: {fileID: 0}
   fpsCam: {fileID: 0}
   attackPoint: {fileID: 0}

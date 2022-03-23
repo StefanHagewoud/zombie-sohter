@@ -133,6 +133,7 @@ public class GunScript : MonoBehaviour
         {
             magazineSize = 0;
             ammoTotal = 0;
+            shotsFired = 0;
         }
 
         ammoTotal -= shotsFired;
