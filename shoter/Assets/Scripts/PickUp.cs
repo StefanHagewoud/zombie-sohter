@@ -13,7 +13,6 @@ public class PickUp : MonoBehaviour
     public float dropForwardForce, dropUpwardForce;
 
     public bool equipped;
-    public TMP_Text ammoText;
 
 
     public void Start()

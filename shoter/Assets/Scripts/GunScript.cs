@@ -47,6 +47,7 @@ public class GunScript : MonoBehaviour
         bulletsleft = magazineSize;
         readyToShoot = true;
         fpsCam = Camera.main;
+        ammoText = GameObject.Find("AmmoCounter").GetComponent<TMP_Text>();
         ammoText.text = $"{bulletsleft}/{ammoTotal}";
     }
 

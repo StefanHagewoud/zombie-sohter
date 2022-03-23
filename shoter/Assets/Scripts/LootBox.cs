@@ -10,6 +10,7 @@ public class LootBox : MonoBehaviour
     public bool slotFull;
     public ParticleSystem lootBoxEffect;
     public ParticleSystem lootBoxEffect2;
+    public ParticleSystem lootBoxEffectIdle;
 
     Animator animator;
 
@@ -22,8 +23,10 @@ public class LootBox : MonoBehaviour
     {
         //itemHolder.localScale = Vector3.zero;
         //itemHolder.gameObject.SetActive(false);
-        slotFull = false;
         animator.SetBool("Open", false);
+        lootBoxEffectIdle.Play();
+        Invoke("OpenWait", 2);
+
 
         foreach (Transform child in itemHolder)
         {
@@ -40,6 +43,7 @@ public class LootBox : MonoBehaviour
             Invoke("SpawnItem", 2);
             lootBoxEffect.Play();
             lootBoxEffect2.Play();
+            lootBoxEffectIdle.Stop();
             slotFull = true;
         }
     }
@@ -51,5 +55,10 @@ public class LootBox : MonoBehaviour
         itemHolder.gameObject.SetActive(true);
         //slotFull = true;
         Invoke("HideItem", 10);
+    }
+
+    public void OpenWait()
+    {
+        slotFull = false;
     }
 }
