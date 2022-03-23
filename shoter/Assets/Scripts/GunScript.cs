@@ -47,6 +47,7 @@ public class GunScript : MonoBehaviour
         bulletsleft = magazineSize;
         readyToShoot = true;
         fpsCam = Camera.main;
+        ammoText.text = $"{bulletsleft}/{ammoTotal}";
     }
 
     private void Update()
@@ -102,6 +103,7 @@ public class GunScript : MonoBehaviour
         bulletsleft--;
         bulletsShot--;
         shotsFired++;
+        ammoText.text = $"{bulletsleft}/{ammoTotal}";
 
 
         Invoke("ResetShot", timeBetweenShooting);
@@ -121,6 +123,7 @@ public class GunScript : MonoBehaviour
     {
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
+        ammoText.text = $"{bulletsleft}/{ammoTotal}";
     }
 
     private void ReloadFinished()
@@ -135,6 +138,7 @@ public class GunScript : MonoBehaviour
         bulletsleft = magazineSize;
         reloading = false;
         shotsFired -= shotsFired;
+        ammoText.text = $"{bulletsleft}/{ammoTotal}";
     }
 
     void DetermineAim()

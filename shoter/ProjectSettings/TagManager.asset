@@ -9,6 +9,7 @@ TagManager:
   - PickUpAble
   - Terrain
   - LootBox
+  - Plakband
   layers:
   - Default
   - TransparentFX

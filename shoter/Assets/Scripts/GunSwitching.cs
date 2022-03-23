@@ -71,6 +71,7 @@ public class GunSwitching : MonoBehaviour
             if (i == selectedWeapon)
             {
                 weapon.gameObject.SetActive(true);
+
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     Drop();

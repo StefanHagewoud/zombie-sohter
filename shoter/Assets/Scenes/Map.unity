@@ -10769,9 +10769,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8578433623609224457, guid: 82a4fa6fb7e5b7a4cb04bdbe580c7efe, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8578433623609224457, guid: 82a4fa6fb7e5b7a4cb04bdbe580c7efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -1760714182489039777, guid: 82a4fa6fb7e5b7a4cb04bdbe580c7efe, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1760714182489039777, guid: 82a4fa6fb7e5b7a4cb04bdbe580c7efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 875330301433346464, guid: 82a4fa6fb7e5b7a4cb04bdbe580c7efe, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 875330301433346464, guid: 82a4fa6fb7e5b7a4cb04bdbe580c7efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82a4fa6fb7e5b7a4cb04bdbe580c7efe, type: 3}
       propertyPath: m_Name
       value: House Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769484663829117588, guid: 82a4fa6fb7e5b7a4cb04bdbe580c7efe, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769484663829117588, guid: 82a4fa6fb7e5b7a4cb04bdbe580c7efe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82a4fa6fb7e5b7a4cb04bdbe580c7efe, type: 3}
@@ -18684,19 +18716,10 @@ MonoBehaviour:
   - {fileID: 6053711608241194569, guid: e4f896b3ca61b03498f95c4061fe6264, type: 3}
   summonObject: {fileID: 6350974734639238581, guid: 741599fdc17a50e4d8b0321ccb9074f5, type: 3}
   robots: []
+  robotsAmount: 0
   players: []
-  spawnPositions:
-  - {fileID: 661106484}
-  - {fileID: 1248054479}
-  - {fileID: 1034950398}
-  - {fileID: 1516832010}
-  - {fileID: 1227041502}
-  - {fileID: 1799651174}
-  - {fileID: 683299965}
-  - {fileID: 951248222}
-  - {fileID: 761129088}
-  - {fileID: 1785000217}
-  - {fileID: 1948152673}
+  robotWaveStartAmount: 7
+  robotWaveAmountMultiplier: 4
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -21191,16 +21214,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8578433623609224457, guid: c829bae315914804ead9364722fdabbb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8578433623609224457, guid: c829bae315914804ead9364722fdabbb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -1760714182489039777, guid: c829bae315914804ead9364722fdabbb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1760714182489039777, guid: c829bae315914804ead9364722fdabbb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -82358763968010616, guid: c829bae315914804ead9364722fdabbb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -82358763968010616, guid: c829bae315914804ead9364722fdabbb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 875330301433346464, guid: c829bae315914804ead9364722fdabbb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 875330301433346464, guid: c829bae315914804ead9364722fdabbb, type: 3}
       propertyPath: m_StaticEditorFlags
