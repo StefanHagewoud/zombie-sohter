@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.AI;
 
 public class AIManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class AIManager : MonoBehaviour
     public List<GameObject> robots;
     public float robotsAmount;
     public GameObject[] players;
+    public NavMeshHit navmesh;
 
     [Header("WAVES")]
     bool waveStarted;

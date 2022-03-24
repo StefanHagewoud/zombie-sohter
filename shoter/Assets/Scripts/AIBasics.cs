@@ -28,6 +28,7 @@ public class AIBasics : MonoBehaviour
         _AIManager = FindObjectOfType<AIManager>();
         players = GameManager.Instance.players;
         nav = GetComponent<NavMeshAgent>();
+
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         moveSpeed = nav.speed;

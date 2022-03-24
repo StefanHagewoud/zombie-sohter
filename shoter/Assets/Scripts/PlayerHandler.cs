@@ -19,27 +19,33 @@ public class PlayerHandler : MonoBehaviour
 
     private void Start()
     {
-        playerSpawn = GameManager.Instance.playerSpawn;
+        if (pv.IsMine)
+        {
+            playerSpawn = GameManager.Instance.playerSpawn;
 
-        //first spawn
-        PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
-        playerPrefab.GetComponent<Health>().playerHandler = this.gameObject;
-        GameManager.Instance.UpdatePlayerlist();
-        firstSpawn = false;
+            //first spawn
+            PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
+            playerPrefab.GetComponent<Health>().playerHandler = this.gameObject;
+            GameManager.Instance.UpdatePlayerlist();
+            firstSpawn = false;
+        }
     }
 
     public void ReSpawnPlayer()
     {
-        if(GameManager.Instance.respawns > 0)
+        if (pv.IsMine)
         {
-            PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
-            playerPrefab.GetComponent<Health>().playerHandler = this.gameObject;
-            GameManager.Instance.UpdatePlayerlist();
-            GameManager.Instance.respawns--;
-        }
-        else
-        {
-            
+            if (GameManager.Instance.respawns > 0)
+            {
+                PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
+                playerPrefab.GetComponent<Health>().playerHandler = this.gameObject;
+                GameManager.Instance.players = GameObject.FindGameObjectsWithTag("Player");
+                GameManager.Instance.respawns--;
+            }
+            else
+            {
+
+            }
         }
     }
 }
