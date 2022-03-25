@@ -26,7 +26,7 @@ public class PlayerHandler : MonoBehaviour
             //first spawn
             PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
             playerPrefab.GetComponent<Health>().playerHandler = this.gameObject;
-            GameManager.Instance.UpdatePlayerlist();
+            //GameManager.Instance.UpdatePlayerlist();
             firstSpawn = false;
         }
     }
@@ -39,7 +39,7 @@ public class PlayerHandler : MonoBehaviour
             {
                 PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
                 playerPrefab.GetComponent<Health>().playerHandler = this.gameObject;
-                GameManager.Instance.players = GameObject.FindGameObjectsWithTag("Player");
+                //GameManager.Instance.players = GameObject.FindGameObjectsWithTag("Player");
                 GameManager.Instance.respawns--;
             }
             else

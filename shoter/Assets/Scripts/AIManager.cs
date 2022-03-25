@@ -51,6 +51,12 @@ public class AIManager : MonoBehaviour
     }
     private void Update()
     {
+        for (var i = robots.Count - 1; i > -1; i--)
+        {
+            if (robots[i] == null)
+                robots.RemoveAt(i);
+        }
+
         if (PhotonNetwork.IsMasterClient)
         {
             if (Input.GetKeyUp(KeyCode.P))

@@ -21,6 +21,16 @@ public class Health : MonoBehaviour
         {
             return;
         }
+
+        if (!isRobot)
+        {
+            pv.RPC("RPC_AddPlayerToList", RpcTarget.All);
+        }
+    }
+    [PunRPC]
+    void RPC_AddPlayerToList()
+    {
+        GameManager.Instance.players.Add(gameObject);
     }
 
     public void GetHit(float _damage)

@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
 
     public Transform[] playerSpawns;
 
-    public GameObject[] players;
+
+    public List<GameObject> players;
 
     [Header("PlayerSpawns")]
     public float respawns;
@@ -29,17 +30,14 @@ public class GameManager : MonoBehaviour
         Transform playerSpawn = playerSpawns[Random.Range(0, playerSpawns.Length)];
         PhotonNetwork.Instantiate(this.playerHandler.name, playerSpawn.position, playerSpawn.rotation);
     }
-    public void UpdatePlayerlist()
+
+    private void Update()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
-        AIManager.instance.UpdatePlayers();
-        //pv.RPC("RPC_UpdatePlayerList", RpcTarget.All);
-    }
-    [PunRPC]
-    void RPC_UpdatePlayerList()
-    {
-        AIManager.instance.UpdatePlayers();
-        players = GameObject.FindGameObjectsWithTag("Player");
+        for (var i = players.Count - 1; i > -1; i--)
+        {
+            if (players[i] == null)
+                players.RemoveAt(i);
+        }
     }
 
     public void PlayerWin()

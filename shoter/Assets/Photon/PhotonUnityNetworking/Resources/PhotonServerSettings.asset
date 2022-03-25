@@ -45,6 +45,7 @@ MonoBehaviour:
   - RPC_GetHit
   - RPC_UpdatePlayerList
   - RPC_UpdateTarget
+  - RPC_AddPlayerToList
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

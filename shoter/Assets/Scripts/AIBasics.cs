@@ -17,7 +17,7 @@ public class AIBasics : MonoBehaviour
     
     [HideInInspector]public float moveSpeed;
     //Targeting
-    public GameObject[] players;
+    public List<GameObject> players;
     public Transform targetDestination;
     private void Awake()
     {
@@ -28,11 +28,12 @@ public class AIBasics : MonoBehaviour
         _AIManager = FindObjectOfType<AIManager>();
         players = GameManager.Instance.players;
         nav = GetComponent<NavMeshAgent>();
-
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         moveSpeed = nav.speed;
         UpdateTarget();
+        AIManager.instance.robots.Add(gameObject);
+
         InvokeRepeating("UpdateTarget", 0, 5);
     }
 

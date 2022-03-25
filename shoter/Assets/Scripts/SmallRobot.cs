@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class SmallRobot : AIBasics
 {
-    public float AttackCooldown;
-    bool cooldown;
-
-    float damping = 2f;
-
-    bool attacking; 
-    
+    float damping = 1f;
+    public float MagReloadTime;
+    bool reloading;
     public override void Update()
     {
         base.Update();
 
-        if (!cooldown)
+        if (!reloading)
         {
             nav.speed = moveSpeed;
             if (nav.remainingDistance <= nav.stoppingDistance)
@@ -40,23 +36,23 @@ public class SmallRobot : AIBasics
             anim.SetFloat("Blend", 0f, 0.1f, Time.deltaTime);
         }
     }
+
     public void MainAttack()
     {
-        StartCoroutine(Attack());
-        IEnumerator Attack()
+        StartCoroutine(Shooting());
+        IEnumerator Shooting()
         {
-            anim.SetLayerWeight(anim.GetLayerIndex("Melee"), 1);
-            anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 0);
-            yield return new WaitForSecondsRealtime(0.24f);
-            anim.SetLayerWeight(anim.GetLayerIndex("Melee"), 0);
-            anim.SetLayerWeight(anim.GetLayerIndex("Movement"), 1);
-            StartCoroutine(Cooldown());
+            anim.SetLayerWeight(anim.GetLayerIndex("Shooting"), 1);
+            yield return new WaitForSecondsRealtime(2f);
+            anim.SetLayerWeight(anim.GetLayerIndex("Shooting"), 0);
+            nav.speed = moveSpeed;
+            StartCoroutine(Reloading());
         }
-        IEnumerator Cooldown()
+        IEnumerator Reloading()
         {
-            cooldown = true;
-            yield return new WaitForSecondsRealtime(AttackCooldown);
-            cooldown = false;
+            reloading = true;
+            yield return new WaitForSecondsRealtime(MagReloadTime);
+            reloading = false;
         }
     }
 }
