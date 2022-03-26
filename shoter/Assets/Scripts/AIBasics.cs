@@ -31,9 +31,11 @@ public class AIBasics : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         moveSpeed = nav.speed;
-        UpdateTarget();
+
         AIManager.instance.robots.Add(gameObject);
 
+        UpdateTarget();
+        nav.destination = targetDestination.position;
         InvokeRepeating("UpdateTarget", 0, 5);
     }
 
@@ -42,6 +44,7 @@ public class AIBasics : MonoBehaviour
         players = GameManager.Instance.players;
         if (players == null)
             return;
+        nav.ResetPath();
         GetClosestPlayer();
     }
 
@@ -53,7 +56,12 @@ public class AIBasics : MonoBehaviour
         }
         else
         {
-            nav.destination = targetDestination.transform.position;
+            nav.destination = targetDestination.position;
+        }
+
+        if (!nav.isOnNavMesh)
+        {
+            gameObject.GetComponent<Health>().GetHit(9999);
         }
     }
 

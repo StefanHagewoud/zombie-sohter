@@ -10,20 +10,18 @@ public class SmallRobot : AIBasics
     public override void Update()
     {
         base.Update();
-
+        Debug.Log(nav.remainingDistance);
         if (!reloading)
         {
             nav.speed = moveSpeed;
-            if (nav.remainingDistance <= nav.stoppingDistance)
+            if (Vector3.Distance(targetDestination.position, transform.position) <= nav.stoppingDistance)
             {
                 nav.speed = 0;
-
                 MainAttack();
             }
-
         }
 
-        if (nav.remainingDistance <= nav.stoppingDistance)
+        if (Vector3.Distance(targetDestination.position, transform.position) <= nav.stoppingDistance)
         {
             anim.SetFloat("Blend", 1f, 0.1f, Time.deltaTime);
             var lookPos = targetDestination.position - transform.position;
