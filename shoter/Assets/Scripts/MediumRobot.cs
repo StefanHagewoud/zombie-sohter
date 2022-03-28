@@ -8,6 +8,9 @@ public class MediumRobot : AIBasics
     float damping = 1f;
     public float AttackReloadTime;
     bool reloading;
+
+    public Transform bulletSpawn;
+
     public override void Update()
     {
         base.Update();

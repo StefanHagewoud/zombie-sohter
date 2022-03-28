@@ -39,7 +39,15 @@ public class GameManager : MonoBehaviour
                 players.RemoveAt(i);
         }
     }
-
+    public void TakeRespawn()
+    {
+        pv.RPC("RPC_TakeRespawn", RpcTarget.All);
+    }
+    [PunRPC]
+    void RPC_TakeRespawn()
+    {
+        respawns--;
+    }
     public void PlayerWin()
     {
 

@@ -38,7 +38,7 @@ public class PlayerHandler : MonoBehaviour
             {
                 PhotonNetwork.Instantiate(playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
                 playerPrefab.GetComponent<Health>().playerHandler = this.gameObject;
-                GameManager.Instance.respawns--;
+                GameManager.Instance.TakeRespawn();
             }
             else
             {

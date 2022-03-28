@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public GameObject playerHandler;
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
+
     bool dead;
     public bool isRobot;
     public GameObject explosion;
@@ -27,6 +28,14 @@ public class Health : MonoBehaviour
             pv.RPC("RPC_AddPlayerToList", RpcTarget.All);
         }
     }
+    private void Start()
+    {
+        if(!isRobot && pv.IsMine)
+        {
+            HUDManager.instance.currentHealthText.text = currentHealth.ToString();
+            HUDManager.instance.maxHealthText.text = maxHealth.ToString();
+        }
+    }
     [PunRPC]
     void RPC_AddPlayerToList()
     {
@@ -36,6 +45,10 @@ public class Health : MonoBehaviour
     public void GetHit(float _damage)
     {
         pv.RPC("RPC_GetHit", RpcTarget.All, _damage);
+        if(!isRobot && pv.IsMine)
+        {
+            HUDManager.instance.currentHealthText.text = currentHealth.ToString();
+        }
     }
     [PunRPC]
     void RPC_GetHit(float _damage)
