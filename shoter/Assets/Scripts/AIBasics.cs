@@ -58,7 +58,7 @@ public class AIBasics : MonoBehaviour
         {
             nav.destination = targetDestination.position;
         }
-
+        Debug.Log(nav.destination);
         if (!nav.isOnNavMesh)
         {
             gameObject.GetComponent<Health>().GetHit(9999);
