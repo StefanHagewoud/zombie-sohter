@@ -7,6 +7,7 @@ using TMPro;
 public class GunScript : MonoBehaviour
 {
     PhotonView pv;
+    Animator anim;
 
     //Gun Stats
     public int damage;
@@ -78,7 +79,7 @@ public class GunScript : MonoBehaviour
     private void Shoot()
     {
         readyToShoot = false;
-
+        GameObject.Find("Character").GetComponent<Animator>().SetBool("Shoot", true);
         //Spread
         float x = Random.Range(-spread, spread);
         float y = Random.Range(-spread, spread);
@@ -118,6 +119,8 @@ public class GunScript : MonoBehaviour
     private void ResetShot()
     {
         readyToShoot = true;
+        GameObject.Find("Character").GetComponent<Animator>().SetBool("Shoot", false);
+
     }
 
     private void Reload()
@@ -125,6 +128,8 @@ public class GunScript : MonoBehaviour
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
         ammoText.text = $"{bulletsleft}/{ammoTotal}";
+        GameObject.Find("Character").GetComponent<Animator>().SetBool("Reload", true);
+
     }
 
     private void ReloadFinished()
@@ -141,6 +146,7 @@ public class GunScript : MonoBehaviour
         reloading = false;
         shotsFired -= shotsFired;
         ammoText.text = $"{bulletsleft}/{ammoTotal}";
+        GameObject.Find("Character").GetComponent<Animator>().SetBool("Reload", false);
     }
 
     void DetermineAim()
