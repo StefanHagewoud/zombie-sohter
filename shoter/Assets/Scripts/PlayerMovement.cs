@@ -77,11 +77,11 @@ public class PlayerMovement : MonoBehaviour
             Move();
             if (move.z != 0.0f || move.x != 0.0f)
             {
-                //character.SetBool("Walking", true);
+                character.SetBool("Walking", true);
             }
             else
             {
-                //character.SetBool("Walking", false);
+                character.SetBool("Walking", false);
             }
         }
     }

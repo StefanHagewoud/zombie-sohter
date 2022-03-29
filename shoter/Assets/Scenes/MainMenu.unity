@@ -5208,7 +5208,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Zombie shoter with robots instead of zombies
+  m_text: Zombie shooter with robots instead of zombies
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a9dc91d296a97e0428b47be9a227b44e, type: 2}
   m_sharedMaterial: {fileID: 3948338210411451131, guid: a9dc91d296a97e0428b47be9a227b44e, type: 2}
