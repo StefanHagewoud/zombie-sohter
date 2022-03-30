@@ -8,7 +8,7 @@ public class PlayerHandler : MonoBehaviour
     PhotonView pv;
     public GameObject playerPrefab;
     [HideInInspector]public GameObject playerSpawn;
-
+    public GameObject myPlayer;
     bool firstSpawn = true;
     private void Awake()
     {
@@ -24,8 +24,8 @@ public class PlayerHandler : MonoBehaviour
             playerSpawn = GameManager.Instance.playerSpawn;
 
             //first spawn
-            PhotonNetwork.Instantiate(playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
-            playerPrefab.GetComponent<Health>().playerHandler = this.gameObject;
+            myPlayer = PhotonNetwork.Instantiate(playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
+            myPlayer.gameObject.GetComponent<Health>().playerHandler = this.gameObject;
             firstSpawn = false;
         }
     }
@@ -34,16 +34,22 @@ public class PlayerHandler : MonoBehaviour
     {
         if (pv.IsMine)
         {
-            if (GameManager.Instance.respawns > 0)
+            StartCoroutine(respawn());
+            IEnumerator respawn()
             {
-                PhotonNetwork.Instantiate(playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
-                playerPrefab.GetComponent<Health>().playerHandler = this.gameObject;
-                GameManager.Instance.TakeRespawn();
+                yield return new WaitForSecondsRealtime(3);
+                if (GameManager.Instance.respawns > 0)
+                {
+                    myPlayer = PhotonNetwork.Instantiate(playerPrefab.name, playerSpawn.transform.position, Quaternion.identity);
+                    myPlayer.gameObject.GetComponent<Health>().playerHandler = this.gameObject;
+                    GameManager.Instance.TakeRespawn();
+                }
+                else
+                {
+                    //spectate?
+                }
             }
-            else
-            {
-                //spectate?
-            }
+
         }
     }
 }

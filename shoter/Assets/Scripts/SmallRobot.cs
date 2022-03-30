@@ -11,7 +11,6 @@ public class SmallRobot : AIBasics
     public override void Update()
     {
         base.Update();
-        Debug.Log(nav.remainingDistance);
         if (!cooldown)
         {
             if (Vector3.Distance(targetDestination.position, transform.position) <= nav.stoppingDistance)
