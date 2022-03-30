@@ -48,6 +48,14 @@ public class GameManager : MonoBehaviour
     {
         respawns--;
     }
+    public void HealAllPlayers()
+    {
+        foreach(GameObject player in players)
+        {
+            player.GetComponent<Health>().currentHealth = 100;
+        }
+    }
+
     public void PlayerWin()
     {
 

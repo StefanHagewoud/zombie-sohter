@@ -19,6 +19,7 @@ public class AIManager : MonoBehaviour
     public NavMeshHit navmesh;
 
     [Header("WAVES")]
+    float waveNumber;
     bool waveStarted;
     public float robotWaveStartAmount;
     public float robotWaveAmountMultiplier;
@@ -55,6 +56,7 @@ public class AIManager : MonoBehaviour
         {
             if (robots[i] == null)
                 robots.RemoveAt(i);
+            UpdateHUD();
         }
 
         if (PhotonNetwork.IsMasterClient)
@@ -68,6 +70,8 @@ public class AIManager : MonoBehaviour
         {
             if(robotsAmount == 0)
             {
+                GameManager.Instance.HealAllPlayers();
+
                 waveStarted = false;
                 NextWave();
             }
@@ -86,6 +90,7 @@ public class AIManager : MonoBehaviour
     }
     public void NextWave()
     {
+        waveNumber++;
         waveStarted = true;
         int _robotWaveAmount = ((int)robotWaveAmount);
         SpawnRobot(_robotWaveAmount, 0);
@@ -131,5 +136,16 @@ public class AIManager : MonoBehaviour
             summonObject.GetComponent<RobotSummon>().robotToSpawn = currentRobotPrefab;
         }
         while (i < amount);
+    }
+    public void UpdateHUD()
+    {
+        pv.RPC("RPC_UpdateHUD", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPC_UpdateHUD()
+    {
+        HUDManager.instance.waveCounter.text = waveNumber.ToString();
+        HUDManager.instance.robotCounter.text = robots.Count.ToString();
     }
 }

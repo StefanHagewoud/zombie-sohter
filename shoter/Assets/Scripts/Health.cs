@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
 
     public GameObject playerHandler;
     [SerializeField] private float maxHealth;
-    [SerializeField] private float currentHealth;
+    public float currentHealth;
 
     bool dead;
     public bool isRobot;
@@ -36,6 +36,7 @@ public class Health : MonoBehaviour
             HUDManager.instance.maxHealthText.text = maxHealth.ToString();
         }
     }
+
     [PunRPC]
     void RPC_AddPlayerToList()
     {

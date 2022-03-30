@@ -47,6 +47,7 @@ MonoBehaviour:
   - RPC_UpdateTarget
   - RPC_AddPlayerToList
   - RPC_TakeRespawn
+  - RPC_UpdateHUD
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
