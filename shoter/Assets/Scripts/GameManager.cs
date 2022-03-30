@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         Transform playerSpawn = playerSpawns[Random.Range(0, playerSpawns.Length)];
         PhotonNetwork.Instantiate(this.playerHandler.name, playerSpawn.position, playerSpawn.rotation);
+        HUDManager.instance.respawnsCounter.text = respawns.ToString();
     }
 
     private void Update()
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
     void RPC_TakeRespawn()
     {
         respawns--;
+        HUDManager.instance.respawnsCounter.text = respawns.ToString();
     }
     public void HealAllPlayers()
     {

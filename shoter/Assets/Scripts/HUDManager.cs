@@ -11,10 +11,11 @@ public class HUDManager : MonoBehaviour
     public Slider healthSlider;
     public TMP_Text currentHealthText;
     public TMP_Text maxHealthText;
-    public TMP_Text revivesLeft;
 
     public TMP_Text waveCounter;
     public TMP_Text robotCounter;
+
+    public TMP_Text respawnsCounter;
     private void Awake()
     {
         instance = this;
