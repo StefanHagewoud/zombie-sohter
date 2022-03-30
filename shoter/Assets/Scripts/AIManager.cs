@@ -21,9 +21,9 @@ public class AIManager : MonoBehaviour
     [Header("WAVES")]
     float waveNumber;
     bool waveStarted;
-    public float robotWaveStartAmount;
+    public float peaceTime;
     public float robotWaveAmountMultiplier;
-    float robotWaveAmount;
+    public float robotWaveAmount;
 
     [Header("SPAWNS")]
     public static float terrainLeft, terrainRight, terrainTop, terrainBottom, terrainWidth, terrainLength, terrainHeight;
@@ -48,7 +48,7 @@ public class AIManager : MonoBehaviour
         terrainTop = terrainBottom + terrainLength;
 
         UpdatePlayers();
-        WaveStart();
+        Invoke("NextWave", 5);
     }
     private void Update()
     {
@@ -71,29 +71,22 @@ public class AIManager : MonoBehaviour
             if(robotsAmount == 0)
             {
                 GameManager.Instance.HealAllPlayers();
-
+                GameManager.Instance.SpawnMisteryBox();
                 waveStarted = false;
-                NextWave();
+
+                Invoke("NextWave", peaceTime);
             }
         }
     }
-    public void WaveStart()
-    {
-        waveStarted = true;
-        StartCoroutine(FirstWave());
-        UpdatePlayers();
-        IEnumerator FirstWave()
-        {
-            yield return new WaitForSecondsRealtime(4);
-            SpawnRobot(10, 0);
-        }
-    }
+
     public void NextWave()
     {
         waveNumber++;
         waveStarted = true;
+
         int _robotWaveAmount = ((int)robotWaveAmount);
         SpawnRobot(_robotWaveAmount, 0);
+
         robotWaveAmount += players.Length * robotWaveAmountMultiplier;
     }
 

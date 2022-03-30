@@ -32,6 +32,8 @@ public class LootBox : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+
+        Invoke("Destroy", 2.5f);
     }
 
     public void ShowItem()
@@ -60,5 +62,10 @@ public class LootBox : MonoBehaviour
     public void OpenWait()
     {
         slotFull = false;
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

@@ -1704,6 +1704,7 @@ MonoBehaviour:
   moveSpeed: 0
   players: []
   targetDestination: {fileID: 0}
+  lastTargetPosition: {fileID: 0}
   attackCooldown: 3
   damagePoint: {fileID: 3750719370004577108}
 --- !u!95 &5005024095979698066

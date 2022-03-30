@@ -18,7 +18,9 @@ public class AIBasics : MonoBehaviour
     [HideInInspector]public float moveSpeed;
     //Targeting
     public List<GameObject> players;
+
     public Transform targetDestination;
+    public Transform lastTargetPosition;
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
@@ -56,8 +58,9 @@ public class AIBasics : MonoBehaviour
         }
         else
         {
-            nav.destination = targetDestination.position;
+            nav.SetDestination(lastTargetPosition.localPosition);
         }
+
         if (!nav.isOnNavMesh)
         {
             gameObject.GetComponent<Health>().GetHit(9999);
@@ -86,5 +89,6 @@ public class AIBasics : MonoBehaviour
             }
         }
         targetDestination = currentClosest.transform;
+        lastTargetPosition = targetDestination;
     }
 }

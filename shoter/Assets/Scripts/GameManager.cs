@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public GameObject playerHandler;
     public GameObject playerSpawn;
 
+    public GameObject misteryBox;
+    public Transform misteryBoxSpawn;
+
     public Transform[] playerSpawns;
 
 
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
         Transform playerSpawn = playerSpawns[Random.Range(0, playerSpawns.Length)];
         PhotonNetwork.Instantiate(this.playerHandler.name, playerSpawn.position, playerSpawn.rotation);
         HUDManager.instance.respawnsCounter.text = respawns.ToString();
+        SpawnMisteryBox();
     }
 
     private void Update()
@@ -57,7 +61,15 @@ public class GameManager : MonoBehaviour
             player.GetComponent<Health>().currentHealth = 100;
         }
     }
-
+    public void SpawnMisteryBox()
+    {
+        pv.RPC("RPC_SpawnMisteryBox", RpcTarget.All);
+    }
+    [PunRPC]
+    void RPC_SpawnMisteryBox()
+    {
+        Instantiate(misteryBox, misteryBoxSpawn.position, misteryBox.transform.rotation);
+    }
     public void PlayerWin()
     {
 

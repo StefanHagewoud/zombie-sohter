@@ -1081,6 +1081,7 @@ MonoBehaviour:
   moveSpeed: 0
   players: []
   targetDestination: {fileID: 0}
+  lastTargetPosition: {fileID: 0}
   AttackReloadTime: 0
   bulletSpawn: {fileID: 0}
 --- !u!195 &841682894
