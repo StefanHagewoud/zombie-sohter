@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Audio;
 
 public class MediumRobot : AIBasics
 {
@@ -11,6 +12,8 @@ public class MediumRobot : AIBasics
 
     public Transform bulletSpawn;
 
+    [Header("Audio")]
+    public AudioClip footstep;
     public override void Update()
     {
         base.Update();
@@ -57,5 +60,12 @@ public class MediumRobot : AIBasics
             yield return new WaitForSecondsRealtime(AttackReloadTime);
             reloading = false;
         }
+    }
+
+    //SOUNDS
+
+    public void PlayFootstep()
+    {
+        audio.PlayOneShot(footstep);
     }
 }

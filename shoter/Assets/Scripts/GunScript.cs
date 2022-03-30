@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
+using UnityEngine.Audio;
 
 public class GunScript : MonoBehaviour
 {
     PhotonView pv;
     Animator anim;
 
-    //Gun Stats
+    [Header("Gun Stats")]
     public int damage;
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
@@ -21,16 +22,17 @@ public class GunScript : MonoBehaviour
 
     public TMP_Text ammoText;
 
-    //bools
+    [Header("Bools")]
     bool shooting, readyToShoot, reloading;
+    public bool pistol, AR, shotgun;
 
-    //Reference
+    [Header("Reference")]
     public Camera fpsCam;
     public Transform attackPoint;
     public RaycastHit rayHit;
     public LayerMask whatIsEnemy;
 
-    //Aiming
+    [Header("Aiming")]
     public Vector3 normalLocalPosition;
     public Vector3 aimingLocalPosition;
     public float aimSmoothing = 10;
@@ -38,6 +40,11 @@ public class GunScript : MonoBehaviour
     public GameObject bulletindicatorfornow;
     public float aimFieldOfView;
 
+    [Header("Audio")]
+    AudioSource audio;
+    public AudioClip pistolShot;
+    public AudioClip ARShot;
+    public AudioClip shotgunShot;
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
@@ -48,6 +55,7 @@ public class GunScript : MonoBehaviour
         bulletsleft = magazineSize;
         readyToShoot = true;
         fpsCam = Camera.main;
+        audio = GetComponent<AudioSource>();
         ammoText = GameObject.Find("AmmoCounter").GetComponent<TMP_Text>();
         ammoText.text = $"{bulletsleft}/{ammoTotal}";
     }
@@ -71,6 +79,9 @@ public class GunScript : MonoBehaviour
         {
             bulletsShot = bulletsPerTap;
             Shoot();
+            readyToShoot = false;
+
+            PlayAudio();
             DetermineRecoil();
         }
     }
@@ -78,7 +89,6 @@ public class GunScript : MonoBehaviour
 
     private void Shoot()
     {
-        readyToShoot = false;
         GameObject.Find("Character").GetComponent<Animator>().SetBool("Shoot", true);
         //Spread
         float x = Random.Range(-spread, spread);
@@ -171,5 +181,15 @@ public class GunScript : MonoBehaviour
     void DetermineRecoil()
     {
         transform.localPosition -= Vector3.forward * recoil;
+    }
+
+    public void PlayAudio()
+    {
+        if (pistol)
+            audio.PlayOneShot(pistolShot);
+        if (shotgun)
+            audio.PlayOneShot(shotgunShot);
+        if (AR)
+            audio.PlayOneShot(ARShot);
     }
 }

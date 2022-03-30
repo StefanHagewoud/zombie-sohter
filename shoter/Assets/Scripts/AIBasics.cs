@@ -12,7 +12,7 @@ public class AIBasics : MonoBehaviour
     [HideInInspector]public Animator anim;
     [HideInInspector] public Rigidbody rb;
     AIManager _AIManager;
-
+    [HideInInspector]public AudioSource audio;
     public float damage;
     
     [HideInInspector]public float moveSpeed;
@@ -21,6 +21,7 @@ public class AIBasics : MonoBehaviour
 
     public Transform targetDestination;
     public Transform lastTargetPosition;
+
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
@@ -32,6 +33,7 @@ public class AIBasics : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        audio = GetComponent<AudioSource>();
         moveSpeed = nav.speed;
 
         AIManager.instance.robots.Add(gameObject);
