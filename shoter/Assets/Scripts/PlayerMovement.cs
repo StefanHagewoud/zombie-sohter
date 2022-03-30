@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (pv.IsMine)
         {
+            character = GameObject.Find("Character").GetComponent<Animator>();
             cam = GetComponentInChildren<Camera>().transform;
             cam.GetComponent<Camera>().enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
