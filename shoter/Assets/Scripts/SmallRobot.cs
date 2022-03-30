@@ -5,18 +5,17 @@ using UnityEngine;
 public class SmallRobot : AIBasics
 {
     float damping = 1f;
-    public float MagReloadTime;
-    bool reloading;
+    public float attackCooldown;
+    bool cooldown;
+    public Transform damagePoint;
     public override void Update()
     {
         base.Update();
         Debug.Log(nav.remainingDistance);
-        if (!reloading)
+        if (!cooldown)
         {
-            nav.speed = moveSpeed;
             if (Vector3.Distance(targetDestination.position, transform.position) <= nav.stoppingDistance)
             {
-                nav.speed = 0;
                 MainAttack();
             }
         }
@@ -37,20 +36,32 @@ public class SmallRobot : AIBasics
 
     public void MainAttack()
     {
-        StartCoroutine(Shooting());
-        IEnumerator Shooting()
+        StartCoroutine(Attacking());
+        IEnumerator Attacking()
         {
-            anim.SetLayerWeight(anim.GetLayerIndex("Shooting"), 1);
-            yield return new WaitForSecondsRealtime(2f);
-            anim.SetLayerWeight(anim.GetLayerIndex("Shooting"), 0);
+            anim.SetLayerWeight(anim.GetLayerIndex("Melee"), 1);
+            yield return new WaitForSecondsRealtime(0.30f);
+            anim.SetLayerWeight(anim.GetLayerIndex("Melee"), 0);
             nav.speed = moveSpeed;
-            StartCoroutine(Reloading());
+            StartCoroutine(Cooldown());
         }
-        IEnumerator Reloading()
+        IEnumerator Cooldown()
         {
-            reloading = true;
-            yield return new WaitForSecondsRealtime(MagReloadTime);
-            reloading = false;
+            cooldown = true;
+            yield return new WaitForSecondsRealtime(attackCooldown);
+            cooldown = false;
+        }
+    }
+
+    void DoDamage()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(damagePoint.position, 2);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.gameObject.tag == "Player")
+            {
+                hitCollider.GetComponent<Health>().GetHit(damage);
+            }
         }
     }
 }
