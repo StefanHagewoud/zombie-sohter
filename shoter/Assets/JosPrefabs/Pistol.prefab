@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8667027567800794378
 Transform:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8667027567800794379}
   m_LocalRotation: {x: 0.6641714, y: 0.064510085, z: -0.05982114, w: 0.74238545}
   m_LocalPosition: {x: 0.01, y: -0.156, z: 0.08}
-  m_LocalScale: {x: 2.0009904, y: 2.0009902, z: 2.0009902}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 8667027568030586675}
   m_RootOrder: 0
@@ -5018,6 +5018,7 @@ MonoBehaviour:
   allowButtonHold: 0
   bulletsleft: 20
   ammoTotal: 200
+  muzzleFlash: {fileID: 8667027567800794376}
   ammoText: {fileID: 0}
   pistol: 1
   AR: 0
@@ -5031,9 +5032,11 @@ MonoBehaviour:
   aimingLocalPosition: {x: 0.01, y: 0.17, z: 0.66}
   aimSmoothing: 10
   recoil: 0.1
-  bulletindicatorfornow: {fileID: 5688980350200005453, guid: 4bd0273606299e74a8d748e1e7c6bcc9, type: 3}
+  hitEffect: {fileID: 3619430246183646358, guid: e6c58378c4bf83141b7ffb96e793ad00, type: 3}
   aimFieldOfView: 45
   pistolShot: {fileID: 8300000, guid: cd9b153d14ea7464a9d94434813fcbe8, type: 3}
+  ARShot: {fileID: 0}
+  shotgunShot: {fileID: 0}
 --- !u!65 &8667027568651029591
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -89,6 +89,7 @@ MonoBehaviour:
   allowButtonHold: 0
   bulletsleft: 24
   ammoTotal: 24
+  muzzleFlash: {fileID: 3307374666372332563}
   ammoText: {fileID: 0}
   pistol: 0
   AR: 0
@@ -102,7 +103,7 @@ MonoBehaviour:
   aimingLocalPosition: {x: 0.011, y: 0.194, z: 0.939}
   aimSmoothing: 10
   recoil: 0.4
-  bulletindicatorfornow: {fileID: 5688980350200005453, guid: 4bd0273606299e74a8d748e1e7c6bcc9, type: 3}
+  hitEffect: {fileID: 3619430246183646358, guid: e6c58378c4bf83141b7ffb96e793ad00, type: 3}
   aimFieldOfView: 50
   pistolShot: {fileID: 0}
   ARShot: {fileID: 0}
@@ -302,7 +303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3307374666372332573
 Transform:
   m_ObjectHideFlags: 0
@@ -312,7 +313,7 @@ Transform:
   m_GameObject: {fileID: 3307374666372332572}
   m_LocalRotation: {x: 0.7069833, y: -0, z: -0, w: 0.70723027}
   m_LocalPosition: {x: 0.00064, y: -0.02378, z: 0.00033}
-  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 3307374666189902690}
   m_RootOrder: 0
@@ -331,9 +332,9 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

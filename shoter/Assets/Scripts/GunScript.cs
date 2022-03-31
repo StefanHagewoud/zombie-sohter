@@ -19,6 +19,7 @@ public class GunScript : MonoBehaviour
     int bulletsShot;
     public int ammoTotal;
     int shotsFired;
+    public ParticleSystem muzzleFlash;
 
     public TMP_Text ammoText;
 
@@ -37,7 +38,7 @@ public class GunScript : MonoBehaviour
     public Vector3 aimingLocalPosition;
     public float aimSmoothing = 10;
     public float recoil;
-    public GameObject bulletindicatorfornow;
+    public GameObject hitEffect;
     public float aimFieldOfView;
 
     [Header("Audio")]
@@ -89,6 +90,7 @@ public class GunScript : MonoBehaviour
 
     private void Shoot()
     {
+        muzzleFlash.Play();
         GameObject.Find("Character").GetComponent<Animator>().SetBool("Shoot", true);
         //Spread
         float x = Random.Range(-spread, spread);
@@ -110,7 +112,8 @@ public class GunScript : MonoBehaviour
         }
 
         //Graphics
-        Destroy(Instantiate(bulletindicatorfornow, rayHit.point, Quaternion.Euler(0, 180, 0)), 2);
+        Destroy(Instantiate(hitEffect, rayHit.point, Quaternion.LookRotation(rayHit.normal)), 1);
+        //Instantiate(impactArrow, hit.point, Quaternion.LookRotation(hit.normal));
 
         bulletsleft--;
         bulletsShot--;
