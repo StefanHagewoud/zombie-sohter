@@ -25,17 +25,17 @@ public class PickUp : MonoBehaviour
     {
         //check if player is in range and E is pressed
         //Vector3 distanceToPlayer = player.position - transform.position;
-        if (!equipped && gunContainer.childCount < 2 && Input.GetKeyDown(KeyCode.E))
+        if (!equipped && gunContainer.childCount <= 2 && Input.GetKeyDown(KeyCode.E))
         {
             if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
             {
                 Debug.Log(hit.transform.name);
-                if (hit.transform.CompareTag("PickUpAble"))
+                if (hit.transform.CompareTag("PickUpAble") && gunContainer.childCount < 2)
                 {
                     PickUpItem();
                 }
 
-                if (hit.transform.CompareTag("LootBox"))
+                if (hit.transform.CompareTag("LootBox") && gunContainer.childCount <= 2)
                 {
                     GameObject.FindGameObjectWithTag("LootBox").GetComponent<LootBox>().ShowItem();
                 }

@@ -180,7 +180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &198960242270807939
 Transform:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 198960242270807938}
   m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -0.001, y: -0.421, z: 0.097}
-  m_LocalScale: {x: 2.0009906, y: 2.0009909, z: 2.0009902}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 198960241966071946}
   m_RootOrder: 0
@@ -209,9 +209,9 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5113,6 +5113,7 @@ MonoBehaviour:
   allowButtonHold: 1
   bulletsleft: 35
   ammoTotal: 200
+  muzzleFlash: {fileID: 198960242270807937}
   ammoText: {fileID: 0}
   pistol: 0
   AR: 1
@@ -5126,7 +5127,7 @@ MonoBehaviour:
   aimingLocalPosition: {x: 0, y: 0.07, z: 0.61}
   aimSmoothing: 10
   recoil: 0.1
-  bulletindicatorfornow: {fileID: 5688980350200005453, guid: 4bd0273606299e74a8d748e1e7c6bcc9, type: 3}
+  hitEffect: {fileID: 3619430246183646358, guid: e6c58378c4bf83141b7ffb96e793ad00, type: 3}
   aimFieldOfView: 35
   pistolShot: {fileID: 0}
   ARShot: {fileID: 8300000, guid: cd9b153d14ea7464a9d94434813fcbe8, type: 3}
