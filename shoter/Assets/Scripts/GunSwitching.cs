@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GunSwitching : MonoBehaviour
 {
     public int selectedWeapon = 0;
     public Transform gunContainer;
+    public bool switchWeapon;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +15,7 @@ public class GunSwitching : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         int previousSelectedWeapon = selectedWeapon;
 
@@ -76,6 +78,7 @@ public class GunSwitching : MonoBehaviour
                 {
                     Drop();
                     weapon.SetParent(null);
+
                 }
             }
             else

@@ -51,11 +51,10 @@ public class GunScript : MonoBehaviour
         pv = GetComponent<PhotonView>();
     }
 
-    private void Start()
+    public void Start()
     {
         bulletsleft = magazineSize;
         readyToShoot = true;
-        fpsCam = Camera.main;
         audio = GetComponent<AudioSource>();
         ammoText = GameObject.Find("AmmoCounter").GetComponent<TMP_Text>();
         ammoText.text = $"{bulletsleft}/{ammoTotal}";
@@ -65,7 +64,7 @@ public class GunScript : MonoBehaviour
     {
         MyInput();
         DetermineAim();
-        //ammoText.text = $"{bulletsleft}/{ammoTotal}";
+        ammoText.text = $"{bulletsleft}/{ammoTotal}";
     }
 
     private void MyInput()
@@ -158,6 +157,14 @@ public class GunScript : MonoBehaviour
         bulletsleft = magazineSize;
         reloading = false;
         shotsFired -= shotsFired;
+
+        if (ammoTotal <= 0)
+        {
+            ammoTotal = 0;
+            shotsFired = 0;
+            magazineSize = 0;
+        }
+
         ammoText.text = $"{bulletsleft}/{ammoTotal}";
         GameObject.Find("Character").GetComponent<Animator>().SetBool("Reload", false);
     }

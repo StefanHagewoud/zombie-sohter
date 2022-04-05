@@ -49,6 +49,7 @@ public class PickUp : MonoBehaviour
         hit.transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         hit.transform.gameObject.GetComponent<BoxCollider>().enabled = false;
         hit.transform.gameObject.GetComponent<GunScript>().enabled = true;
+        hit.transform.gameObject.GetComponent<GunScript>().fpsCam = fpsCam;
 
         //make weapon a child of the camera and move it to default position
         hit.transform.SetParent(gunContainer);
@@ -56,6 +57,7 @@ public class PickUp : MonoBehaviour
         hit.transform.localRotation = Quaternion.Euler(Vector3.zero);
         //transform.localScale = Vector3.one;
         gunContainer.GetComponent<GunSwitching>().selectedWeapon = gunContainer.childCount - 1;
+
 
         //make rigidbody kinematic and boxcollider a trigger
         //rb.isKinematic = true;

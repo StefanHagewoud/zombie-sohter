@@ -22440,9 +22440,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1859115779758602762, guid: 70f83d8c875be4a4c8a15946d11aca02, type: 3}
+      propertyPath: ammoText
+      value: 
+      objectReference: {fileID: 387039321}
+    - target: {fileID: 1859115779758602762, guid: 70f83d8c875be4a4c8a15946d11aca02, type: 3}
       propertyPath: rightHandIK
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1859115780820283911, guid: 70f83d8c875be4a4c8a15946d11aca02, type: 3}
+      propertyPath: ammoText
+      value: 
+      objectReference: {fileID: 387039321}
     - target: {fileID: 5989871460952946990, guid: 70f83d8c875be4a4c8a15946d11aca02, type: 3}
       propertyPath: m_IsActive
       value: 0
