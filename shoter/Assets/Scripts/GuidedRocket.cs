@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
+using UnityEngine.Audio;
 
 public class GuidedRocket : MonoBehaviour
 {
     PhotonView pv;
     public float speed;
     public GameObject explosion;
+    AudioSource audioSource;
+    AudioClip woosh;
     [HideInInspector] public float damage;
     [HideInInspector]public GameObject[] players;
     public GameObject target;
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
+        audioSource = GetComponent<AudioSource>();
     }
     void Start()
     {
@@ -43,7 +47,9 @@ public class GuidedRocket : MonoBehaviour
 
     void Update()
     {
-        if(target == null)
+
+
+        if (target == null)
         {
             transform.position += transform.forward * speed * Time.deltaTime;
         }

@@ -12,11 +12,11 @@ public class BigRobot : AIBasics
     public ParticleSystem rightRocketParticle;
     public ParticleSystem leftRocketParticle;
 
-
     public float rocketReloadTime;
     bool reloading;
     float damping = 1.5f;
 
+    public AudioClip rocketLaunch;
     public override void Update()
     {
         base.Update();
@@ -67,12 +67,14 @@ public class BigRobot : AIBasics
     public void InstantiateRocketRight()
     {
         rightRocketParticle.Emit(1);
+        audio.PlayOneShot(rocketLaunch);
         PhotonNetwork.Instantiate(this.GuidedRocket.name, rightRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
         GuidedRocket.GetComponent<GuidedRocket>().damage = damage;
     }
     public void InstantiateRocketLeft()
     {
         leftRocketParticle.Emit(1);
+        audio.PlayOneShot(rocketLaunch);
         PhotonNetwork.Instantiate(this.GuidedRocket.name, leftRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
         GuidedRocket.GetComponent<GuidedRocket>().damage = damage;
     }

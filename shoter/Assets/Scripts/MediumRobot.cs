@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.Audio;
 
 public class MediumRobot : AIBasics
 {
@@ -58,6 +57,7 @@ public class MediumRobot : AIBasics
 
     public void PlayFootstep()
     {
+        audio.pitch = Random.Range(1, 2);
         audio.PlayOneShot(footstep);
     }
 }
