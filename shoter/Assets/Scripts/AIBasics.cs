@@ -12,7 +12,7 @@ public class AIBasics : MonoBehaviour
     [HideInInspector]public Animator anim;
     [HideInInspector] public Rigidbody rb;
     AIManager _AIManager;
-    [HideInInspector]public AudioSource audio;
+    [HideInInspector]public AudioSource audioS;
     public float damage;
     
     [HideInInspector]public float moveSpeed;
@@ -33,7 +33,7 @@ public class AIBasics : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        audio = GetComponent<AudioSource>();
+        audioS = GetComponent<AudioSource>();
         moveSpeed = nav.speed;
 
         AIManager.instance.robots.Add(gameObject);

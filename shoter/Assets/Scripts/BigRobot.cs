@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Audio;
 
 public class BigRobot : AIBasics
 {
@@ -67,14 +68,14 @@ public class BigRobot : AIBasics
     public void InstantiateRocketRight()
     {
         rightRocketParticle.Emit(1);
-        audio.PlayOneShot(rocketLaunch);
+        audioS.PlayOneShot(rocketLaunch);
         PhotonNetwork.Instantiate(this.GuidedRocket.name, rightRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
         GuidedRocket.GetComponent<GuidedRocket>().damage = damage;
     }
     public void InstantiateRocketLeft()
     {
         leftRocketParticle.Emit(1);
-        audio.PlayOneShot(rocketLaunch);
+        audioS.PlayOneShot(rocketLaunch);
         PhotonNetwork.Instantiate(this.GuidedRocket.name, leftRocketSpawn.transform.position, rightRocketSpawn.transform.rotation);
         GuidedRocket.GetComponent<GuidedRocket>().damage = damage;
     }
