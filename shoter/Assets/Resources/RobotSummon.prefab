@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   summon: {fileID: 1042827400421263612}
-  robotToSpawn: {fileID: 6053711608241194569, guid: e4f896b3ca61b03498f95c4061fe6264, type: 3}
+  robotToSpawn: {fileID: 7908276342471480244, guid: 274a0118228184549b05ffc8602f71d9, type: 3}
 --- !u!195 &7097610466252731129
 NavMeshAgent:
   m_ObjectHideFlags: 0

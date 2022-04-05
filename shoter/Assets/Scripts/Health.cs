@@ -36,7 +36,6 @@ public class Health : MonoBehaviour
             HUDManager.instance.maxHealthText.text = maxHealth.ToString();
         }
     }
-
     [PunRPC]
     void RPC_AddPlayerToList()
     {
