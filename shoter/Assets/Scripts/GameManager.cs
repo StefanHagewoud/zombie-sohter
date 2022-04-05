@@ -56,7 +56,12 @@ public class GameManager : MonoBehaviour
     }
     public void HealAllPlayers()
     {
-        foreach(GameObject player in players)
+        pv.RPC("RPC_HealAllPlayers", RpcTarget.All);
+    }
+    [PunRPC]
+    void RPC_HealAllPlayers()
+    {
+        foreach (GameObject player in players)
         {
             player.GetComponent<Health>().currentHealth = 100;
         }

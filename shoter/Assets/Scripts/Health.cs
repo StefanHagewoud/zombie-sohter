@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     [HideInInspector] public PhotonView pv;
 
     public GameObject playerHandler;
-    [SerializeField] private float maxHealth;
+    public float maxHealth;
     public float currentHealth;
 
     bool dead;

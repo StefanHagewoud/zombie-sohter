@@ -83,11 +83,11 @@ public class AIManager : MonoBehaviour
     {
         waveNumber++;
         waveStarted = true;
-
+        robotWaveAmount += players.Length * robotWaveAmountMultiplier;
         int _robotWaveAmount = ((int)robotWaveAmount);
         SpawnRobot(_robotWaveAmount, 0);
 
-        robotWaveAmount += players.Length * robotWaveAmountMultiplier;
+        
     }
 
     public void UpdatePlayers()
