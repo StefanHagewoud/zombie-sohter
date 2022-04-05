@@ -15,7 +15,7 @@ public class AIManager : MonoBehaviour
     public GameObject summonObject;
     public List<GameObject> robots;
     public float robotsAmount;
-    public GameObject[] players;
+    public List<GameObject> players;
     public NavMeshHit navmesh;
 
     [Header("WAVES")]
@@ -83,18 +83,19 @@ public class AIManager : MonoBehaviour
     {
         waveNumber++;
         waveStarted = true;
-        robotWaveAmount += players.Length * robotWaveAmountMultiplier;
+
+        Debug.Log(robotWaveAmount);
         int _robotWaveAmount = ((int)robotWaveAmount);
         SpawnRobot(_robotWaveAmount, 0);
 
-        
+        players = GameManager.Instance.players;
+        robotWaveAmount += players.Count * robotWaveAmountMultiplier;
     }
 
     public void UpdatePlayers()
     {
         print("update");
-        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Player");
-        players = gameObjects;
+        players = GameManager.Instance.players;
 
         foreach (GameObject robot in robots)
         {
