@@ -1700,7 +1700,7 @@ MonoBehaviour:
   nav: {fileID: 0}
   anim: {fileID: 0}
   rb: {fileID: 0}
-  audio: {fileID: 0}
+  audioS: {fileID: 0}
   damage: 10
   moveSpeed: 0
   players: []

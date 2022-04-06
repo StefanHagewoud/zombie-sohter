@@ -66,6 +66,6 @@ public class LootBox : MonoBehaviour
 
     public void Destroy()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

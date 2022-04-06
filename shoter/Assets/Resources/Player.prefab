@@ -711,6 +711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedWeapon: 0
   gunContainer: {fileID: 1859115780820283904}
+  switchWeapon: 0
 --- !u!114 &708747239
 MonoBehaviour:
   m_ObjectHideFlags: 0
