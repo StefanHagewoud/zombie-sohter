@@ -88,9 +88,10 @@ MonoBehaviour:
   bulletsPerTap: 6
   allowButtonHold: 0
   bulletsleft: 24
-  ammoTotal: 24
+  ammoTotal: 72
   muzzleFlash: {fileID: 3307374666372332563}
   ammoText: {fileID: 0}
+  holdingWeapon: 0
   pistol: 0
   AR: 0
   shotgun: 1

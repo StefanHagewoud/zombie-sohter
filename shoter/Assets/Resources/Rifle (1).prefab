@@ -5112,9 +5112,10 @@ MonoBehaviour:
   bulletsPerTap: 1
   allowButtonHold: 1
   bulletsleft: 35
-  ammoTotal: 200
+  ammoTotal: 350
   muzzleFlash: {fileID: 198960242270807937}
   ammoText: {fileID: 0}
+  holdingWeapon: 0
   pistol: 0
   AR: 1
   shotgun: 0

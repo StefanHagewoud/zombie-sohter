@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 49715935}
   - component: {fileID: 49715934}
   - component: {fileID: 49715933}
-  - component: {fileID: 49715932}
   m_Layer: 0
   m_Name: TestEnemy (2)
   m_TagString: Enemy
@@ -144,19 +143,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &49715932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49715931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362ae892b8c8a1c48a7297b7481ddc89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
 --- !u!54 &49715933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -387,7 +373,6 @@ GameObject:
   - component: {fileID: 258558934}
   - component: {fileID: 258558933}
   - component: {fileID: 258558932}
-  - component: {fileID: 258558931}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Enemy
@@ -395,19 +380,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &258558931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258558930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362ae892b8c8a1c48a7297b7481ddc89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
 --- !u!54 &258558932
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -935,6 +907,7 @@ MonoBehaviour:
   ammoTotal: 0
   muzzleFlash: {fileID: 0}
   ammoText: {fileID: 0}
+  holdingWeapon: 0
   pistol: 0
   AR: 0
   shotgun: 0
@@ -5901,6 +5874,7 @@ MonoBehaviour:
   ammoTotal: 0
   muzzleFlash: {fileID: 0}
   ammoText: {fileID: 0}
+  holdingWeapon: 0
   pistol: 0
   AR: 0
   shotgun: 0
@@ -6200,7 +6174,6 @@ GameObject:
   - component: {fileID: 749204365}
   - component: {fileID: 749204364}
   - component: {fileID: 749204363}
-  - component: {fileID: 749204362}
   m_Layer: 0
   m_Name: TestEnemy (3)
   m_TagString: Enemy
@@ -6208,19 +6181,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &749204362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749204361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362ae892b8c8a1c48a7297b7481ddc89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
 --- !u!54 &749204363
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11364,6 +11324,7 @@ MonoBehaviour:
   ammoTotal: 0
   muzzleFlash: {fileID: 0}
   ammoText: {fileID: 0}
+  holdingWeapon: 0
   pistol: 0
   AR: 0
   shotgun: 0
@@ -11459,7 +11420,6 @@ GameObject:
   - component: {fileID: 1312206885}
   - component: {fileID: 1312206884}
   - component: {fileID: 1312206883}
-  - component: {fileID: 1312206882}
   m_Layer: 0
   m_Name: TestEnemy (4)
   m_TagString: Enemy
@@ -11467,19 +11427,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1312206882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312206881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362ae892b8c8a1c48a7297b7481ddc89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
 --- !u!54 &1312206883
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11913,6 +11860,7 @@ MonoBehaviour:
   ammoTotal: 0
   muzzleFlash: {fileID: 0}
   ammoText: {fileID: 0}
+  holdingWeapon: 0
   pistol: 0
   AR: 0
   shotgun: 0
@@ -12112,7 +12060,6 @@ GameObject:
   - component: {fileID: 1745671237}
   - component: {fileID: 1745671236}
   - component: {fileID: 1745671235}
-  - component: {fileID: 1745671234}
   m_Layer: 0
   m_Name: TestEnemy (5)
   m_TagString: Enemy
@@ -12120,19 +12067,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1745671234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745671233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362ae892b8c8a1c48a7297b7481ddc89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
 --- !u!54 &1745671235
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22149,7 +22083,6 @@ GameObject:
   - component: {fileID: 2144171946}
   - component: {fileID: 2144171945}
   - component: {fileID: 2144171944}
-  - component: {fileID: 2144171943}
   m_Layer: 0
   m_Name: TestEnemy (1)
   m_TagString: Enemy
@@ -22157,19 +22090,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2144171943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144171942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362ae892b8c8a1c48a7297b7481ddc89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
 --- !u!54 &2144171944
 Rigidbody:
   m_ObjectHideFlags: 0
