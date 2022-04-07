@@ -25,7 +25,7 @@ public class LootBox : MonoBehaviour
         //itemHolder.gameObject.SetActive(false);
         animator.SetBool("Open", false);
         lootBoxEffectIdle.Play();
-        Invoke("OpenWait", 2);
+        Invoke("OpenWait", 4);
 
 
         foreach (Transform child in itemHolder)
