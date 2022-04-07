@@ -10232,9 +10232,11 @@ MonoBehaviour:
   mouseSensitivity: 100
   cam: {fileID: 0}
   torso: {fileID: 4146734268189871938}
+  currentGunPrefab: {fileID: 0}
   pistolPrefab: {fileID: 3577635895863950646}
   ARPrefab: {fileID: 3246986986451970211}
   shotgunPrefab: {fileID: 1827394118590688547}
+  currenWeapon: 0
 --- !u!114 &1685961338417600749
 MonoBehaviour:
   m_ObjectHideFlags: 0
