@@ -6,22 +6,22 @@ using Photon.Pun;
 public class GameManager : MonoBehaviour
 {
     PhotonView pv;
-
     public static GameManager Instance;
 
+    [Header("Player Related")]
     public GameObject playerHandler;
     public GameObject playerSpawn;
+    public Transform[] playerSpawns;
+    public List<GameObject> players;
+    public float respawns;
 
+    [Header("MisteryBox")]
     public GameObject misteryBox;
     public Transform misteryBoxSpawn;
 
-    public Transform[] playerSpawns;
-
-
-    public List<GameObject> players;
-
-    [Header("PlayerSpawns")]
-    public float respawns;
+    [HideInInspector] public bool gameStarted;
+    bool gameOver;
+    float gameOverTimer;
 
     private void Awake()
     {
@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        gameOverTimer = 5;
         PhotonNetwork.AutomaticallySyncScene = true;
         Transform playerSpawn = playerSpawns[Random.Range(0, playerSpawns.Length)];
         PhotonNetwork.Instantiate(this.playerHandler.name, playerSpawn.position, playerSpawn.rotation);
@@ -43,6 +44,16 @@ public class GameManager : MonoBehaviour
         {
             if (players[i] == null)
                 players.RemoveAt(i);
+        }
+
+        if(players.Count == 0 && respawns == 0 && gameStarted)
+        {
+            pv.RPC("RPC_EndGame", RpcTarget.All);
+        }
+
+        if (gameOver)
+        {
+            HUDManager.instance.finalCountDown.text = gameOverTimer.ToString();
         }
     }
     public void TakeRespawn()
@@ -76,13 +87,16 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(misteryBox, misteryBoxSpawn.position, misteryBox.transform.rotation);
     }
-    public void EndGame()
+
+    [PunRPC]
+    void RPC_EndGame()
     {
         StartCoroutine(_EndGame());
         IEnumerator _EndGame()
         {
-            HUDManager.instance.gameOverScreen.SetActive(true);
-            yield return new WaitForSecondsRealtime(5);
+            HUDManager.instance.GameOver();
+            gameOver = true;
+            yield return new WaitForSecondsRealtime(gameOverTimer);
             PhotonNetwork.LoadLevel(0);
         }
     }

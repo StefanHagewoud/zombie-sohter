@@ -83,6 +83,8 @@ public class AIManager : MonoBehaviour
     {
         waveNumber++;
         waveStarted = true;
+        GameManager.Instance.gameStarted = true;
+
 
         Debug.Log(robotWaveAmount);
         int _robotWaveAmount = ((int)robotWaveAmount);

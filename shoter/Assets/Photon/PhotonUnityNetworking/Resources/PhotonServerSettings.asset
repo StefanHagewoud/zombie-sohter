@@ -53,6 +53,7 @@ MonoBehaviour:
   - RPC_HideWeapon
   - RPC_showWeapon
   - RPC_ShowWeapon
+  - RPC_EndGame
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
