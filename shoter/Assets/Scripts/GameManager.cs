@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
         Transform playerSpawn = playerSpawns[Random.Range(0, playerSpawns.Length)];
         PhotonNetwork.Instantiate(this.playerHandler.name, playerSpawn.position, playerSpawn.rotation);
         HUDManager.instance.respawnsCounter.text = respawns.ToString();
@@ -75,12 +76,14 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(misteryBox, misteryBoxSpawn.position, misteryBox.transform.rotation);
     }
-    public void PlayerWin()
+    public void EndGame()
     {
-
-    }
-    public void RobotWin()
-    {
-
+        StartCoroutine(_EndGame());
+        IEnumerator _EndGame()
+        {
+            HUDManager.instance.gameOverScreen.SetActive(true);
+            yield return new WaitForSecondsRealtime(5);
+            PhotonNetwork.LoadLevel(0);
+        }
     }
 }
