@@ -25,6 +25,7 @@ public class GunScript : MonoBehaviour
 
     [Header("Bools")]
     bool shooting, readyToShoot, reloading;
+    public bool holdingWeapon;
     public bool pistol, AR, shotgun;
 
     [Header("Reference")]
@@ -42,7 +43,7 @@ public class GunScript : MonoBehaviour
     public float aimFieldOfView;
 
     [Header("Audio")]
-    AudioSource audio;
+    AudioSource audioS;
     public AudioClip pistolShot;
     public AudioClip ARShot;
     public AudioClip shotgunShot;
@@ -55,9 +56,21 @@ public class GunScript : MonoBehaviour
     {
         bulletsleft = magazineSize;
         readyToShoot = true;
-        audio = GetComponent<AudioSource>();
+        audioS = GetComponent<AudioSource>();
         ammoText = GameObject.Find("AmmoCounter").GetComponent<TMP_Text>();
         ammoText.text = $"{bulletsleft}/{ammoTotal}";
+
+        if (pistol)
+            gameObject.GetComponentInParent<PlayerMovement>().ChangeWeaponPrefab(1);
+        if (AR)
+            gameObject.GetComponentInParent<PlayerMovement>().ChangeWeaponPrefab(2);
+        if (shotgun)
+            gameObject.GetComponentInParent<PlayerMovement>().ChangeWeaponPrefab(3);
+
+        if (!pistol && !shotgun && !AR)
+        {
+            gameObject.GetComponentInParent<PlayerMovement>().currenWeapon = 0;
+        }
     }
 
     private void Update()
@@ -196,10 +209,10 @@ public class GunScript : MonoBehaviour
     public void PlayAudio()
     {
         if (pistol)
-            audio.PlayOneShot(pistolShot);
+            audioS.PlayOneShot(pistolShot);
         if (shotgun)
-            audio.PlayOneShot(shotgunShot);
+            audioS.PlayOneShot(shotgunShot);
         if (AR)
-            audio.PlayOneShot(ARShot);
+            audioS.PlayOneShot(ARShot);
     }
 }

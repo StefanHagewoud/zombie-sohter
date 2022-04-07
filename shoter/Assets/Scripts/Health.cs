@@ -6,6 +6,7 @@ using Photon.Pun;
 public class Health : MonoBehaviour
 {
     [HideInInspector] public PhotonView pv;
+    public GameObject ragdoll;
 
     public GameObject playerHandler;
     public float maxHealth;
@@ -70,6 +71,7 @@ public class Health : MonoBehaviour
             else
             {
                 playerHandler.GetComponent<PlayerHandler>().ReSpawnPlayer();
+                PhotonNetwork.Instantiate(ragdoll.name, transform.position, transform.rotation);
                 PhotonNetwork.Destroy(gameObject);
             }
         }

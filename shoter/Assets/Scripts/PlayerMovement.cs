@@ -30,7 +30,12 @@ public class PlayerMovement : MonoBehaviour
     public Transform cam;
     public Transform torso;
 
+    public GameObject currentGunPrefab;
+    public GameObject pistolPrefab;
+    public GameObject ARPrefab;
+    public GameObject shotgunPrefab;
 
+    [HideInInspector] public int currenWeapon;
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
@@ -125,5 +130,36 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
             }
         }
+    }
+
+    public void ChangeWeaponPrefab(int i)
+    {
+        if(i == 0)
+        {
+            pv.RPC("RPC_HideWeapon", RpcTarget.Others, pistolPrefab);
+        }
+        if(i == 1)
+        {
+            pv.RPC("RPC_ShowWeapon", RpcTarget.Others, pistolPrefab);
+        }       
+        if(i == 2)
+        {
+            pv.RPC("RPC_ShowWeapon", RpcTarget.Others, ARPrefab);
+        } 
+        if(i == 3)
+        {
+            pv.RPC("RPC_ShowWeapon", RpcTarget.Others, shotgunPrefab);
+        }
+    }
+    [PunRPC]
+    void RPC_ShowWeapon(GameObject Weapon)
+    {
+        Weapon.SetActive(true);
+        currentGunPrefab = Weapon;
+    }   
+    [PunRPC]
+    void RPC_HideWeapon(GameObject Weapon)
+    {
+        currentGunPrefab.SetActive(false);
     }
 }

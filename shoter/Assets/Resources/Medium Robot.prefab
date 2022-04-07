@@ -6047,6 +6047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 0}
+  ragdoll: {fileID: 0}
   playerHandler: {fileID: 0}
   maxHealth: 130
   currentHealth: 0

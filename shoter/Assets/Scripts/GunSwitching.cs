@@ -93,6 +93,7 @@ public class GunSwitching : MonoBehaviour
     public void Drop()
     {
         //equipped = false;
+        gunContainer.GetComponentInChildren<GunScript>().pistol = false;
         gunContainer.GetComponentInChildren<GunScript>().enabled = false;
         gunContainer.GetComponentInChildren<Rigidbody>().isKinematic = false;
         gunContainer.GetComponentInChildren<BoxCollider>().enabled = true;
