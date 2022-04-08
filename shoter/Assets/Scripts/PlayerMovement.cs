@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -35,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject ARPrefab;
     public GameObject shotgunPrefab;
 
+
+    public AudioSource audioS;
+    public AudioClip footStep;
     [HideInInspector] public int currenWeapon;
     private void Awake()
     {
@@ -131,7 +135,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
+    public void PlayFootStep()
+    {
+        audioS.PlayOneShot(footStep);
+    }
     public void ChangeWeaponPrefab(int i)
     {
         if(i == 0)
