@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
 
         if (gameOver)
         {
+            HUDManager.instance.gameOverScreen.SetActive(true);
             HUDManager.instance.finalCountDown.text = gameOverTimer.ToString();
         }
     }
