@@ -19,6 +19,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     void Start()
     {
+        PhotonNetwork.LeaveRoom();
+
         PhotonNetwork.ConnectUsingSettings();
         Cursor.lockState = CursorLockMode.None;
     }

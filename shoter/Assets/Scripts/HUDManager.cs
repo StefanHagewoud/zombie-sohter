@@ -20,6 +20,7 @@ public class HUDManager : MonoBehaviour
     public TMP_Text waveCounter;
     public TMP_Text robotCounter;
     public TMP_Text waveCountDown;
+    public GameObject waveCountDownObject;
 
     public TMP_Text respawnsCounter;
 

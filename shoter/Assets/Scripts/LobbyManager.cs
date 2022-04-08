@@ -87,6 +87,13 @@ public class LobbyManager : MonoBehaviour
         Debug.Log(_playerName);
     }
 
+    public void LeaveLobby()
+    {
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
+    }
+
     public void StartGame()
     {
         if (MainMenu.Instance.pvp)

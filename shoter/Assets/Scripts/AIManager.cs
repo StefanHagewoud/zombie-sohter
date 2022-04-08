@@ -75,6 +75,7 @@ public class AIManager : MonoBehaviour
                 waveStarted = false;
 
                 Invoke("NextWave", peaceTime);
+                
             }
         }
     }
