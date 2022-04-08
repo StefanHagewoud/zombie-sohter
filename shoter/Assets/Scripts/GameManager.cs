@@ -58,11 +58,12 @@ public class GameManager : MonoBehaviour
     }
     public void TakeRespawn()
     {
-        pv.RPC("RPC_TakeRespawn", RpcTarget.All);
+        pv.RPC("PC_TakeRespawn", RpcTarget.All);
     }
     [PunRPC]
-    void RPC_TakeRespawn()
+    void PC_TakeRespawn()
     {
+        print("taking respawn");
         respawns--;
         HUDManager.instance.respawnsCounter.text = respawns.ToString();
     }

@@ -48,13 +48,10 @@ public class PlayerHandler : MonoBehaviour
                 {
                     if (GameManager.Instance.respawns <= 0)
                     {
-                        FindObjectOfType<HUDManager>().gameOverScreen.SetActive(true);
                         Cursor.lockState = CursorLockMode.None;
                     }
-                    //spectate?
                 }
             }
-
         }
     }
 }
