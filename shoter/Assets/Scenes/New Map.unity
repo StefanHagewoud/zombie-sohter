@@ -1532,7 +1532,7 @@ MonoBehaviour:
   playerSpawns:
   - {fileID: 1481890727}
   players: []
-  respawns: 0
+  respawns: 2
   misteryBox: {fileID: 6089733076827972804, guid: 08090d08663179345a40dc3d7705b996, type: 3}
   misteryBoxSpawn: {fileID: 1181306114}
   gameStarted: 0
