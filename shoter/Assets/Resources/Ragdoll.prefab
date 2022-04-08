@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 1489314226009378307}
   - component: {fileID: -4051398433114123603}
   - component: {fileID: 7139039520106843949}
+  - component: {fileID: -8498084404048368788}
   m_Layer: 0
   m_Name: Ragdoll
   m_TagString: Untagged
@@ -590,6 +591,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7139039520106843949}
+  - {fileID: -8498084404048368788}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -609,6 +611,19 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &-8498084404048368788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297059875224147129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35144820bcc25444bb8f0fd767d9423e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmoothingDelay: 0.5
 --- !u!1 &2419687557039720859
 GameObject:
   m_ObjectHideFlags: 0

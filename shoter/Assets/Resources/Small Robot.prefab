@@ -1679,6 +1679,7 @@ GameObject:
   - component: {fileID: -572548494380837728}
   - component: {fileID: 1124291892335669260}
   - component: {fileID: 2994880789763946290}
+  - component: {fileID: 3265848383935559793}
   m_Layer: 0
   m_Name: Small Robot
   m_TagString: Enemy
@@ -1767,6 +1768,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: -8602751021756874242}
   - {fileID: 8404267419143064384}
+  - {fileID: 3265848383935559793}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1882,6 +1884,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3265848383935559793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7908276342471480244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35144820bcc25444bb8f0fd767d9423e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmoothingDelay: 0.5
 --- !u!1 &8380036825966638399
 GameObject:
   m_ObjectHideFlags: 0

@@ -728,6 +728,7 @@ GameObject:
   - component: {fileID: -3021170350762014676}
   - component: {fileID: 1023718154214049251}
   - component: {fileID: 8086656976042663013}
+  - component: {fileID: 518973570309690478}
   m_Layer: 0
   m_Name: Big Robot
   m_TagString: Enemy
@@ -837,6 +838,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 6737051542124219988}
   - {fileID: -3021170350762014676}
+  - {fileID: 518973570309690478}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1032,6 +1034,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &518973570309690478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053711608241194569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35144820bcc25444bb8f0fd767d9423e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmoothingDelay: 0.5
 --- !u!1 &6175886476077018586
 GameObject:
   m_ObjectHideFlags: 0
