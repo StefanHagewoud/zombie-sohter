@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public TMP_InputField CreateGameInput;
     public static MainMenu Instance;
 
+    public bool pvp;
     [SerializeField] TMP_Text usernameInput;
     private void Awake()
     {
@@ -35,6 +36,15 @@ public class MainMenu : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
         SetUsername();
     }
+    public void PvPLobby()
+    {
+        pvp = true;
+    }
+    public void RobotLobby()
+    {
+        pvp = false;
+    }
+
     public void SetUsername()
     {
         PhotonNetwork.NickName = usernameInput.text;
@@ -45,8 +55,18 @@ public class MainMenu : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom()
     {
-        MenuManager.Instance.SwitchMenu("Lobby");
-        LobbyManager.Instance.SetupRoom();
+        if (pvp)
+        {
+            MenuManager.Instance.SwitchMenu("PvPLobby");
+            LobbyManager.Instance.SetupPvP();
+        }
+        else
+        {
+            MenuManager.Instance.SwitchMenu("Lobby");
+            LobbyManager.Instance.SetupRoom();
+        }
+
+        
     }
     public void QuitGame()
     {

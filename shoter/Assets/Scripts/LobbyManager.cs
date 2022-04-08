@@ -13,6 +13,9 @@ public class LobbyManager : MonoBehaviour
     public GameObject lobbySettingsPanel;
     public GameObject lobbyInfoPanel;
 
+    public GameObject lobbySettingsPanelPvp;
+    public GameObject lobbyInfoPanelPvp;
+
     public GameObject playerLobbyItem;
     public Transform playersPanel;
     private void Awake()
@@ -47,6 +50,25 @@ public class LobbyManager : MonoBehaviour
         return;
     }
 
+    public void SetupPvP()
+    {
+        if (PhotonNetwork.InRoom)
+        {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                lobbySettingsPanelPvp.SetActive(true);
+                lobbyInfoPanelPvp.SetActive(false);
+            }
+            else
+            {
+                lobbySettingsPanelPvp.SetActive(false);
+                lobbyInfoPanelPvp.SetActive(true);
+            }
+        }
+        pv.RPC("RPC_SpawnPlayerLobbyItem", RpcTarget.AllBuffered, PhotonNetwork.NickName, PhotonNetwork.LocalPlayer);
+        return;
+    }
+
     [PunRPC]
     void RPC_SpawnPlayerLobbyItem(string _playerName, Player _player)
     {
@@ -57,6 +79,13 @@ public class LobbyManager : MonoBehaviour
 
     public void StartGame()
     {
-        PhotonNetwork.LoadLevel(1);
+        if (MainMenu.Instance.pvp)
+        {
+            PhotonNetwork.LoadLevel(2);
+        }
+        else
+        {
+            PhotonNetwork.LoadLevel(1);
+        }
     }
 }

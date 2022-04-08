@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     PhotonView pv;
     public static GameManager Instance;
+    public bool pvp;
 
     [Header("Player Related")]
     public GameObject playerHandler;
@@ -58,7 +59,15 @@ public class GameManager : MonoBehaviour
     }
     public void TakeRespawn()
     {
-        pv.RPC("RPC_TakeRespawn", RpcTarget.All);
+        if (!pvp)
+        {
+            pv.RPC("RPC_TakeRespawn", RpcTarget.All);
+        }
+        else
+        {
+            respawns--;
+            HUDManager.instance.respawnsCounter.text = respawns.ToString();
+        }
     }
     [PunRPC]
     void RPC_TakeRespawn()

@@ -121,6 +121,11 @@ public class GunScript : MonoBehaviour
             {
                 rayHit.collider.GetComponent<Health>().GetHit(damage);
             }
+
+            if (rayHit.collider.CompareTag("Player"))
+            {
+                rayHit.collider.GetComponent<Health>().GetHit(damage);
+            }
         }
 
         //Graphics
