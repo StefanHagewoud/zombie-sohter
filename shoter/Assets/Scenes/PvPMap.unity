@@ -12757,7 +12757,7 @@ MonoBehaviour:
   robotCounter: {fileID: 0}
   waveCountDown: {fileID: 0}
   respawnsCounter: {fileID: 1823886590}
-  gameOverScreen: {fileID: 0}
+  gameOverScreen: {fileID: 1861419051}
   finalCountDown: {fileID: 0}
 --- !u!114 &1275764607
 MonoBehaviour:
