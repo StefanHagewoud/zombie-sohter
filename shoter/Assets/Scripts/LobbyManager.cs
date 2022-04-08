@@ -17,7 +17,9 @@ public class LobbyManager : MonoBehaviour
     public GameObject lobbyInfoPanelPvp;
 
     public GameObject playerLobbyItem;
+
     public Transform playersPanel;
+    public Transform playersPanelPvP;
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
@@ -65,7 +67,8 @@ public class LobbyManager : MonoBehaviour
                 lobbyInfoPanelPvp.SetActive(true);
             }
         }
-        pv.RPC("RPC_SpawnPlayerLobbyItem", RpcTarget.AllBuffered, PhotonNetwork.NickName, PhotonNetwork.LocalPlayer);
+
+        pv.RPC("RPC_SpawnPlayerLobbyItemPvP", RpcTarget.AllBuffered, PhotonNetwork.NickName, PhotonNetwork.LocalPlayer);
         return;
     }
 
@@ -73,6 +76,13 @@ public class LobbyManager : MonoBehaviour
     void RPC_SpawnPlayerLobbyItem(string _playerName, Player _player)
     {
         PlayerLobbyItem _playerLobbyItem = Instantiate(playerLobbyItem, playersPanel).GetComponent<PlayerLobbyItem>();
+        _playerLobbyItem.PlayerSetup(_playerName, _player);
+        Debug.Log(_playerName);
+    }
+    [PunRPC]
+    void RPC_SpawnPlayerLobbyItemPvP(string _playerName, Player _player)
+    {
+        PlayerLobbyItem _playerLobbyItem = Instantiate(playerLobbyItem, playersPanelPvP).GetComponent<PlayerLobbyItem>();
         _playerLobbyItem.PlayerSetup(_playerName, _player);
         Debug.Log(_playerName);
     }

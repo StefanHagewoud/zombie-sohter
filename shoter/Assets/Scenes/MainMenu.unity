@@ -13363,6 +13363,7 @@ MonoBehaviour:
   lobbyInfoPanelPvp: {fileID: 1600946042}
   playerLobbyItem: {fileID: 1759622084245697677, guid: 5eab534a609d4e94b9d113e75100a63b, type: 3}
   playersPanel: {fileID: 259663065}
+  playersPanelPvP: {fileID: 648322676}
 --- !u!114 &876249589
 MonoBehaviour:
   m_ObjectHideFlags: 0
