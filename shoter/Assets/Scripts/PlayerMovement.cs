@@ -136,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(i == 0)
         {
-            pv.RPC("RPC_HideWeapon", RpcTarget.Others, pistolPrefab);
+            pv.RPC("RPC_HideWeapon", RpcTarget.Others);
         }
         if(i == 1)
         {

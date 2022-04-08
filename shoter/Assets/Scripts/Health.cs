@@ -37,6 +37,7 @@ public class Health : MonoBehaviour
             HUDManager.instance.maxHealthText.text = maxHealth.ToString();
         }
     }
+
     [PunRPC]
     void RPC_AddPlayerToList()
     {
@@ -72,6 +73,7 @@ public class Health : MonoBehaviour
             {
                 playerHandler.GetComponent<PlayerHandler>().ReSpawnPlayer();
                 PhotonNetwork.Instantiate(ragdoll.name, transform.position, transform.rotation);
+                GetComponentInChildren<GunSwitching>().Drop();
                 PhotonNetwork.Destroy(gameObject);
             }
         }
