@@ -73,7 +73,7 @@ public class Health : MonoBehaviour
             {
                 playerHandler.GetComponent<PlayerHandler>().ReSpawnPlayer();
                 PhotonNetwork.Instantiate(ragdoll.name, transform.position, transform.rotation);
-                GetComponentInChildren<GunSwitching>().Drop();
+                GameManager.Instance.CheckEnd();
                 PhotonNetwork.Destroy(gameObject);
             }
         }

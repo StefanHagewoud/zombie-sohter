@@ -5,12 +5,16 @@ using TMPro;
 
 public class GunSwitching : MonoBehaviour
 {
+    public static GunSwitching Instance;
+
     public int selectedWeapon = 0;
     public Transform gunContainer;
     public bool switchWeapon;
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
+
         SelectWeapon();
     }
 
@@ -93,7 +97,6 @@ public class GunSwitching : MonoBehaviour
     public void Drop()
     {
         //equipped = false;
-        
         gunContainer.GetComponentInChildren<GunScript>().pistol = false;
         gunContainer.GetComponentInChildren<GunScript>().enabled = false;
         gunContainer.GetComponentInChildren<Rigidbody>().isKinematic = false;

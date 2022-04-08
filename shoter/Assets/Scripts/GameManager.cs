@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
         PhotonNetwork.Instantiate(this.playerHandler.name, playerSpawn.position, playerSpawn.rotation);
         HUDManager.instance.respawnsCounter.text = respawns.ToString();
         SpawnMisteryBox();
+
+        if (pvp)
+        {
+            gameStarted = true;
+        }
     }
 
     private void Update()
@@ -47,7 +52,7 @@ public class GameManager : MonoBehaviour
                 players.RemoveAt(i);
         }
 
-        if(players.Count == 0 && respawns == 0 && gameStarted)
+        if(!pvp && players.Count == 0 && respawns == 0 && gameStarted)
         {
             pv.RPC("RPC_EndGame", RpcTarget.All);
         }
@@ -57,6 +62,14 @@ public class GameManager : MonoBehaviour
             HUDManager.instance.finalCountDown.text = gameOverTimer.ToString();
         }
     }
+    public void CheckEnd()
+    {
+        if (pvp && respawns == 0)
+        {
+            pv.RPC("RPC_EndGame", RpcTarget.All);
+        }
+    }
+
     public void TakeRespawn()
     {
         if (!pvp)
@@ -90,7 +103,11 @@ public class GameManager : MonoBehaviour
     }
     public void SpawnMisteryBox()
     {
-        pv.RPC("RPC_SpawnMisteryBox", RpcTarget.All);
+        if (!pvp)
+        {
+            pv.RPC("RPC_SpawnMisteryBox", RpcTarget.All);
+        }
+        
     }
     [PunRPC]
     void RPC_SpawnMisteryBox()
