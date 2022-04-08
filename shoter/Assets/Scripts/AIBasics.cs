@@ -25,6 +25,9 @@ public class AIBasics : MonoBehaviour
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
+
+        if (!pv.IsMine)
+            return;
     }
     void Start()
     {
