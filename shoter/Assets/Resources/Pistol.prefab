@@ -5020,6 +5020,7 @@ MonoBehaviour:
   ammoTotal: 200
   muzzleFlash: {fileID: 8667027567800794376}
   ammoText: {fileID: 0}
+  holdingWeapon: 0
   pistol: 1
   AR: 0
   shotgun: 0
@@ -5037,6 +5038,9 @@ MonoBehaviour:
   pistolShot: {fileID: 8300000, guid: cd9b153d14ea7464a9d94434813fcbe8, type: 3}
   ARShot: {fileID: 0}
   shotgunShot: {fileID: 0}
+  pistolReload: {fileID: 8300000, guid: 776968e7da258824ca3b591564608461, type: 3}
+  shotgunReload: {fileID: 0}
+  ARReload: {fileID: 0}
 --- !u!65 &8667027568651029591
 BoxCollider:
   m_ObjectHideFlags: 0

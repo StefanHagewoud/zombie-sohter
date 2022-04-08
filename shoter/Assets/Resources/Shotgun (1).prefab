@@ -109,6 +109,9 @@ MonoBehaviour:
   pistolShot: {fileID: 0}
   ARShot: {fileID: 0}
   shotgunShot: {fileID: 8300000, guid: b19777da36abbfc4ea3723f03148966c, type: 3}
+  pistolReload: {fileID: 8300000, guid: 776968e7da258824ca3b591564608461, type: 3}
+  shotgunReload: {fileID: 8300000, guid: ce56b4ecba12fdb4d9691ab9691d3695, type: 3}
+  ARReload: {fileID: 0}
 --- !u!82 &-151000210848636542
 AudioSource:
   m_ObjectHideFlags: 0

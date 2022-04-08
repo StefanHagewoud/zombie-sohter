@@ -10237,8 +10237,6 @@ MonoBehaviour:
   pistolPrefab: {fileID: 3577635895863950646}
   ARPrefab: {fileID: 3246986986451970211}
   shotgunPrefab: {fileID: 1827394118590688547}
-  audioS: {fileID: 6080177639101807983}
-  footStep: {fileID: 8300000, guid: 684e13a7d196e6a4abe8736d4315c776, type: 3}
   currenWeapon: 0
 --- !u!114 &1685961338417600749
 MonoBehaviour:

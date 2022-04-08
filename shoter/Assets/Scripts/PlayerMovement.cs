@@ -36,9 +36,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject ARPrefab;
     public GameObject shotgunPrefab;
 
-
-    public AudioSource audioS;
-    public AudioClip footStep;
     [HideInInspector] public int currenWeapon;
     private void Awake()
     {
@@ -134,10 +131,6 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
             }
         }
-    }
-    public void PlayFootStep()
-    {
-        audioS.PlayOneShot(footStep);
     }
     public void ChangeWeaponPrefab(int i)
     {

@@ -47,6 +47,9 @@ public class GunScript : MonoBehaviour
     public AudioClip pistolShot;
     public AudioClip ARShot;
     public AudioClip shotgunShot;
+    public AudioClip pistolReload;
+    public AudioClip shotgunReload;
+    public AudioClip ARReload;
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
@@ -159,11 +162,13 @@ public class GunScript : MonoBehaviour
         Invoke("ReloadFinished", reloadTime);
         ammoText.text = $"{bulletsleft}/{ammoTotal}";
         GameObject.Find("Character").GetComponent<Animator>().SetBool("Reload", true);
-
     }
 
     private void ReloadFinished()
     {
+        PlayReloadAudio();
+
+
         if (ammoTotal <= 0 && bulletsleft <= 0)
         {
             magazineSize = 0;
@@ -219,5 +224,14 @@ public class GunScript : MonoBehaviour
             audioS.PlayOneShot(shotgunShot);
         if (AR)
             audioS.PlayOneShot(ARShot);
+    }
+    public void PlayReloadAudio()
+    {
+        if (pistol)
+            audioS.PlayOneShot(pistolReload);
+        if (shotgun)
+            audioS.PlayOneShot(shotgunReload);
+        if (AR)
+            audioS.PlayOneShot(ARReload);
     }
 }
