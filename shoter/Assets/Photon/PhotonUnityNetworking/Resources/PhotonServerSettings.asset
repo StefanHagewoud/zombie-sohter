@@ -55,6 +55,7 @@ MonoBehaviour:
   - RPC_ShowWeapon
   - RPC_EndGame
   - PC_TakeRespawn
+  - RPC_PlayAudio
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
