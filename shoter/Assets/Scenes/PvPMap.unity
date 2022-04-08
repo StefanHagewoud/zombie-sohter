@@ -12756,6 +12756,7 @@ MonoBehaviour:
   waveCounter: {fileID: 0}
   robotCounter: {fileID: 0}
   waveCountDown: {fileID: 0}
+  waveCountDownObject: {fileID: 0}
   respawnsCounter: {fileID: 1823886590}
   gameOverScreen: {fileID: 1861419051}
   finalCountDown: {fileID: 436154239}
@@ -17209,7 +17210,7 @@ MonoBehaviour:
   playerSpawns:
   - {fileID: 307949749}
   players: []
-  respawns: 1
+  respawns: 2
   misteryBox: {fileID: 6089733076827972804, guid: 08090d08663179345a40dc3d7705b996, type: 3}
   misteryBoxSpawn: {fileID: 0}
   gameStarted: 0

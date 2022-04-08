@@ -57,7 +57,6 @@ public class MediumRobot : AIBasics
 
     public void PlayFootstep()
     {
-        audioS.pitch = Random.Range(1, 2);
-        audioS.PlayOneShot(footstep);
+        //audioS.PlayOneShot(footstep);
     }
 }

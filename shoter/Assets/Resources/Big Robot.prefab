@@ -782,6 +782,7 @@ MonoBehaviour:
   leftRocketParticle: {fileID: 6395801362101071262}
   rocketReloadTime: 10
   rocketLaunch: {fileID: 8300000, guid: a59404feb4b5d8f47b6d6940ab34f8a6, type: 3}
+  footstep: {fileID: 0}
 --- !u!95 &6395801362869213007
 Animator:
   serializedVersion: 3
