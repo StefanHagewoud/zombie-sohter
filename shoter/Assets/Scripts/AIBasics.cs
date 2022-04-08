@@ -41,9 +41,14 @@ public class AIBasics : MonoBehaviour
 
         AIManager.instance.robots.Add(gameObject);
 
-        UpdateTarget();
+        
         nav.destination = targetDestination.position;
-        InvokeRepeating("UpdateTarget", 0, 5);
+
+        if (pv.IsMine)
+        {
+            UpdateTarget();
+            InvokeRepeating("UpdateTarget", 0, 5);
+        }
     }
 
     public void UpdateTarget()
@@ -57,18 +62,21 @@ public class AIBasics : MonoBehaviour
 
     public virtual void Update()
     {
-        if (targetDestination == null)
+        if (pv.IsMine)
         {
-            UpdateTarget();
-        }
-        else
-        {
-            nav.SetDestination(lastTargetPosition.localPosition);
-        }
+            if (targetDestination == null)
+            {
+                UpdateTarget();
+            }
+            else
+            {
+                nav.SetDestination(lastTargetPosition.localPosition);
+            }
 
-        if (!nav.isOnNavMesh)
-        {
-            gameObject.GetComponent<Health>().GetHit(9999);
+            if (!nav.isOnNavMesh)
+            {
+                gameObject.GetComponent<Health>().GetHit(9999);
+            }
         }
     }
 
