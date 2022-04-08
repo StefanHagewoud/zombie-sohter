@@ -12758,7 +12758,7 @@ MonoBehaviour:
   waveCountDown: {fileID: 0}
   respawnsCounter: {fileID: 1823886590}
   gameOverScreen: {fileID: 1861419051}
-  finalCountDown: {fileID: 0}
+  finalCountDown: {fileID: 436154239}
 --- !u!114 &1275764607
 MonoBehaviour:
   m_ObjectHideFlags: 0
