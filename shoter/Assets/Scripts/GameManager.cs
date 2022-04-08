@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -59,8 +60,7 @@ public class GameManager : MonoBehaviour
 
         if (gameOver)
         {
-            HUDManager.instance.gameOverScreen.SetActive(true);
-            HUDManager.instance.finalCountDown.text = gameOverTimer.ToString();
+            HUDManager.instance.GameOver();
         }
     }
     public void CheckEnd()
@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
             HUDManager.instance.GameOver();
             gameOver = true;
             yield return new WaitForSecondsRealtime(gameOverTimer);
-            PhotonNetwork.LoadLevel(0);
+            SceneManager.LoadScene(0);
         }
     }
 }
